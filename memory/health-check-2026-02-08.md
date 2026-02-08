@@ -1,24 +1,25 @@
-# Health Check - 2026-02-08 13:50 NT
+# Self-Healing Daemon Check Log
 
-## Self-Healing Daemon
-- Status: ✅ RUNNING
-- PID: 1402
-- Command: python3 /config/clawd/tools/self_heal_daemon.py
+**Timestamp:** 2026-02-08 17:00:10 NT (Europe/Sofia local: 17:00:10)  
+**Check Type:** Automated health check (cron job d87b9193-1b5f-4f6d-85aa-d764331deeb7)
 
-## Dashboard (:8080)
-- Status: ✅ RESPONDING
-- HTTP Code: 200
+## System Status Summary
 
-## Disk Space
-- Filesystem: overlay
-- Size: 587G
-- Used: 175G (32%)
-- Available: 388G
-- Status: ✅ HEALTHY
+| Metric | Status | Value |
+|--------|--------|-------|
+| Disk Usage | ✅ Healthy | 32% (175G/587G used) |
+| Memory | ✅ Healthy | 3.0G/15Gi used (12Gi available) |
+| Uptime | ✅ Stable | 13 days, 7 hours |
+| OpenClaw Gateway | ✅ Running | RPC probe: ok |
+| Load Average | ✅ Low | 0.28, 0.22, 0.25 |
 
-## Git Status
-- Status: ✅ MOSTLY CLEAN
-- Untracked: memory/reflections.jsonl
+## Notes
 
-## Summary
-No critical issues. All systems operational.
+- Gateway functional on loopback (127.0.0.1:18789)
+- Some non-critical config warnings (PATH not set in service config)
+- systemd user services unavailable (expected in container environment)
+- No alerts triggered — all systems within normal parameters
+
+## Action Taken
+
+No critical issues found. No alert sent. Routine check logged.
