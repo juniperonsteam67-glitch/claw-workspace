@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-08T15:01:10.357930",
+  "generated": "2026-02-08T15:31:08.666004",
   "ideas": [
     "Add more robust error handling to webwatch",
     "Create a 'claw status' command that shows everything at once",
