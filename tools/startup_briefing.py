@@ -10,6 +10,9 @@ import json
 from datetime import datetime
 from glob import glob
 
+# Set Newfoundland timezone
+os.environ['TZ'] = 'America/St_Johns'
+
 WORKSPACE = "/config/clawd"
 MEMORY_DIR = os.path.join(WORKSPACE, "memory")
 
@@ -143,7 +146,7 @@ def generate_briefing():
     briefing.append("=" * 50)
     briefing.append("🦅 CLAW STARTUP BRIEFING")
     briefing.append("=" * 50)
-    briefing.append(f"📅 {now.strftime('%Y-%m-%d %H:%M:%S')}")
+    briefing.append(f"📅 {now.strftime('%Y-%m-%d %H:%M:%S')} NST (Newfoundland Time)")
     briefing.append("")
     
     # Identity

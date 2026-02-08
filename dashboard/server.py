@@ -58,10 +58,25 @@ def get_system_status():
     except:
         uptime = "Unknown"
     
+    # Get Newfoundland time
+    try:
+        result = subprocess.run(
+            ["TZ=America/St_Johns", "date", "+%Y-%m-%d %H:%M:%S %Z"],
+            capture_output=True, text=True, shell=False
+        )
+        # Fallback to environment variable approach
+        import os
+        os.environ['TZ'] = 'America/St_Johns'
+        local_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")
+    except:
+        local_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
     return {
         "status": "online",
         "uptime": uptime,
         "timestamp": datetime.now().isoformat(),
+        "local_time": local_time,
+        "timezone": "America/St_Johns (Newfoundland)",
         "workspace": WORKSPACE
     }
 

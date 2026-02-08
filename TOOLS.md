@@ -1,6 +1,11 @@
 # TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Environment
+
+### Timezone
+- **Set to:** America/St_Johns (Newfoundland Time, UTC-3:30)
+- **Robert's location:** Holyrood, Newfoundland, Canada
+- **Use in scripts:** `TZ=America/St_Johns date`
 
 ## What Goes Here
 
@@ -12,24 +17,6 @@ Things like:
 - Speaker/room names
 - Device nicknames
 - Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
 
 ## Why Separate?
 

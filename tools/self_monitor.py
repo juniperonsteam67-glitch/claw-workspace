@@ -5,9 +5,13 @@ Track my own resource usage and health
 """
 
 import os
+import os
+os.environ['TZ'] = 'America/St_Johns'
 import subprocess
 import json
 from datetime import datetime
+
+WORKSPACE = "/config/clawd"
 
 WORKSPACE = "/config/clawd"
 CONFIG_DIR = "/config/.openclaw"
