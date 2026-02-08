@@ -1,8 +1,8 @@
 {
   "check": {
-    "timestamp": "2026-02-08T18:20:00+02:00",
+    "timestamp": "2026-02-08T18:31:00+02:00",
     "date": "2026-02-08",
-    "time": "18:20",
+    "time": "18:31",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
@@ -27,21 +27,21 @@
       "details": "HTTP 200"
     },
     "MQTT Broker (localhost:1883)": {
-      "status": "DOWN",
+      "status": "UP",
       "optional": true,
-      "details": "TCP connection failed"
+      "details": "TCP connection successful"
     },
     "SSH Server (localhost:22)": {
-      "status": "DOWN",
+      "status": "UP",
       "optional": true,
-      "details": "TCP connection failed"
+      "details": "TCP connection successful"
     }
   },
   "summary": {
     "total": 6,
-    "up": 4,
-    "down": 2,
-    "optional_down": 2,
+    "up": 6,
+    "down": 0,
+    "optional_down": 0,
     "non_optional_down": 0
   },
   "alert_sent": false,
