@@ -1,7 +1,1 @@
-{"timestamp": "2026-02-08T14:30:34.177381", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "851cae18f373f13e", "changed": true, "previous_check": "2026-02-08T13:39:42.105406"}
-{"timestamp": "2026-02-08T15:30:32.943089", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "963fd11c947a1b59", "changed": true, "previous_check": "2026-02-08T14:30:34.177381"}
-{"timestamp": "2026-02-08T16:30:22.123316", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "e16e333b1785ad4d", "changed": true, "previous_check": "2026-02-08T15:30:32.943089"}
-{"timestamp": "2026-02-08T15:30:55.383613", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "f590de7a8ff4aa45", "changed": true, "previous_check": "2026-02-08T16:30:22.123316"}
-{"timestamp": "2026-02-08T16:30:39.266000", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "1481a17360751335", "changed": true, "previous_check": "2026-02-08T15:30:55.383613"}
-{"timestamp": "2026-02-08T19:30:00.000000", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "62c7523ab9e672cb", "changed": true, "previous_check": "2026-02-08T16:30:39.266000"}
-{"timestamp": "2026-02-08T20:30:00.000000", "url": "https://news.ycombinator.com", "name": "hackernews", "hash": "a4b00c80766e14f43ac7b482df134251", "changed": true, "previous_check": "2026-02-08T19:30:00.000000"}
+{"timestamp":"2026-02-08T19:30:20.174Z","source":"hackernews","event":"INITIAL_SCAN","stories_count":30,"top_story":"We mourn our craft (609 points)","note":"First scan - no previous state to compare"}
