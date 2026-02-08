@@ -7,3 +7,12 @@
 {"timestamp": "2026-02-08T14:05:05.398789", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
 {"timestamp": "2026-02-08T14:05:05.398937", "type": "status", "service": "Chromium Debug", "status": "UP", "details": ""}
 {"timestamp": "2026-02-08T14:05:05.403606", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:10:31.746750", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:10:31.746828", "type": "recovered", "service": "Dashboard", "status": "UP", "details": "Changed from DOWN"}
+{"timestamp": "2026-02-08T14:10:31.746995", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:10:31.747173", "type": "status", "service": "Chromium Debug", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:10:31.751938", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:15:03.411274", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:15:03.411463", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:15:03.411641", "type": "status", "service": "Chromium Debug", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T14:15:03.417166", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
