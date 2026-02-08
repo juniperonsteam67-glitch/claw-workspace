@@ -1,0 +1,49 @@
+{
+  "check": {
+    "timestamp": "2026-02-08T22:45:00+02:00",
+    "date": "2026-02-08",
+    "time": "22:45",
+    "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
+  },
+  "services": {
+    "Home Assistant (localhost:8123)": {
+      "status": "UP",
+      "optional": false,
+      "details": "HTTP 200"
+    },
+    "External Internet (1.1.1.1:443)": {
+      "status": "UP",
+      "optional": false,
+      "details": "HTTP 301 (redirect)"
+    },
+    "OpenClaw Gateway (localhost:9000)": {
+      "status": "UP",
+      "optional": false,
+      "details": "HTTP 200"
+    },
+    "Frigate NVR (localhost:8080)": {
+      "status": "UP",
+      "optional": true,
+      "details": "HTTP 200"
+    },
+    "MQTT Broker (localhost:1883)": {
+      "status": "UP",
+      "optional": true,
+      "details": "TCP connection OK"
+    },
+    "SSH Server (localhost:22)": {
+      "status": "UP",
+      "optional": true,
+      "details": "TCP connection OK"
+    }
+  },
+  "summary": {
+    "total": 6,
+    "up": 6,
+    "down": 0,
+    "optional_down": 0,
+    "non_optional_down": 0
+  },
+  "alert_sent": false,
+  "alert_reason": "All non-optional services operational - no alert needed"
+}

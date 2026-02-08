@@ -1,0 +1,429 @@
+{
+  "generated_at": "2026-02-08T17:44:36.702661",
+  "total_skills": 52,
+  "categories": {
+    "other": [
+      {
+        "name": "1password",
+        "path": "/usr/lib/node_modules/openclaw/skills/1password",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/1password/SKILL.md",
+        "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op."
+      },
+      {
+        "name": "blogwatcher",
+        "path": "/usr/lib/node_modules/openclaw/skills/blogwatcher",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/blogwatcher/SKILL.md",
+        "description": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI."
+      },
+      {
+        "name": "blucli",
+        "path": "/usr/lib/node_modules/openclaw/skills/blucli",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/blucli/SKILL.md",
+        "description": "BluOS CLI (blu) for discovery, playback, grouping, and volume."
+      },
+      {
+        "name": "bluebubbles",
+        "path": "/usr/lib/node_modules/openclaw/skills/bluebubbles",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/bluebubbles/SKILL.md",
+        "description": "Use when you need to send or manage iMessages via BlueBubbles (recommended iMessage integration). Calls go through the generic message tool with channel=\"bluebubbles\"."
+      },
+      {
+        "name": "camsnap",
+        "path": "/usr/lib/node_modules/openclaw/skills/camsnap",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/camsnap/SKILL.md",
+        "description": "Capture frames or clips from RTSP/ONVIF cameras."
+      },
+      {
+        "name": "canvas",
+        "path": "/usr/lib/node_modules/openclaw/skills/canvas",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/canvas/SKILL.md",
+        "description": "Display HTML content on connected OpenClaw nodes (Mac app, iOS, Android)."
+      },
+      {
+        "name": "clawhub",
+        "path": "/usr/lib/node_modules/openclaw/skills/clawhub",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+        "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI."
+      },
+      {
+        "name": "eightctl",
+        "path": "/usr/lib/node_modules/openclaw/skills/eightctl",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/eightctl/SKILL.md",
+        "description": "Control Eight Sleep pods (status, temperature, alarms, schedules)."
+      },
+      {
+        "name": "food-order",
+        "path": "/usr/lib/node_modules/openclaw/skills/food-order",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/food-order/SKILL.md",
+        "description": "Reorder Foodora orders + track ETA/status with ordercli. Never confirm without explicit user approval. Triggers: order food, reorder, track ETA."
+      },
+      {
+        "name": "gemini",
+        "path": "/usr/lib/node_modules/openclaw/skills/gemini",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/gemini/SKILL.md",
+        "description": "Gemini CLI for one-shot Q&A, summaries, and generation."
+      },
+      {
+        "name": "gog",
+        "path": "/usr/lib/node_modules/openclaw/skills/gog",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/gog/SKILL.md",
+        "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
+      },
+      {
+        "name": "goplaces",
+        "path": "/usr/lib/node_modules/openclaw/skills/goplaces",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/goplaces/SKILL.md",
+        "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts."
+      },
+      {
+        "name": "himalaya",
+        "path": "/usr/lib/node_modules/openclaw/skills/himalaya",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/himalaya/SKILL.md",
+        "description": "CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, read, write, reply, forward, search, and organize emails from the terminal. Supports multiple accounts and message composition with MML (MIME Meta Language)."
+      },
+      {
+        "name": "imsg",
+        "path": "/usr/lib/node_modules/openclaw/skills/imsg",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/imsg/SKILL.md",
+        "description": "iMessage/SMS CLI for listing chats, history, watch, and sending."
+      },
+      {
+        "name": "local-places",
+        "path": "/usr/lib/node_modules/openclaw/skills/local-places",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/local-places/SKILL.md",
+        "description": "Search for places (restaurants, cafes, etc.) via Google Places API proxy on localhost."
+      },
+      {
+        "name": "mcporter",
+        "path": "/usr/lib/node_modules/openclaw/skills/mcporter",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/mcporter/SKILL.md",
+        "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation."
+      },
+      {
+        "name": "model-usage",
+        "path": "/usr/lib/node_modules/openclaw/skills/model-usage",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/model-usage/SKILL.md",
+        "description": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable per-model summary from codexbar cost JSON."
+      },
+      {
+        "name": "nano-banana-pro",
+        "path": "/usr/lib/node_modules/openclaw/skills/nano-banana-pro",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/nano-banana-pro/SKILL.md",
+        "description": "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro)."
+      },
+      {
+        "name": "nano-pdf",
+        "path": "/usr/lib/node_modules/openclaw/skills/nano-pdf",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/nano-pdf/SKILL.md",
+        "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI."
+      },
+      {
+        "name": "notion",
+        "path": "/usr/lib/node_modules/openclaw/skills/notion",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/notion/SKILL.md",
+        "description": "Notion API for creating and managing pages, databases, and blocks."
+      },
+      {
+        "name": "obsidian",
+        "path": "/usr/lib/node_modules/openclaw/skills/obsidian",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/obsidian/SKILL.md",
+        "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli."
+      },
+      {
+        "name": "openai-whisper",
+        "path": "/usr/lib/node_modules/openclaw/skills/openai-whisper",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/openai-whisper/SKILL.md",
+        "description": "Local speech-to-text with the Whisper CLI (no API key)."
+      },
+      {
+        "name": "openai-whisper-api",
+        "path": "/usr/lib/node_modules/openclaw/skills/openai-whisper-api",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/openai-whisper-api/SKILL.md",
+        "description": "Transcribe audio via OpenAI Audio Transcriptions API (Whisper)."
+      },
+      {
+        "name": "openhue",
+        "path": "/usr/lib/node_modules/openclaw/skills/openhue",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/openhue/SKILL.md",
+        "description": "Control Philips Hue lights/scenes via the OpenHue CLI."
+      },
+      {
+        "name": "oracle",
+        "path": "/usr/lib/node_modules/openclaw/skills/oracle",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/oracle/SKILL.md",
+        "description": "Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns)."
+      },
+      {
+        "name": "ordercli",
+        "path": "/usr/lib/node_modules/openclaw/skills/ordercli",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/ordercli/SKILL.md",
+        "description": "Foodora-only CLI for checking past orders and active order status (Deliveroo WIP)."
+      },
+      {
+        "name": "peekaboo",
+        "path": "/usr/lib/node_modules/openclaw/skills/peekaboo",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/peekaboo/SKILL.md",
+        "description": "Capture and automate macOS UI with the Peekaboo CLI."
+      },
+      {
+        "name": "sag",
+        "path": "/usr/lib/node_modules/openclaw/skills/sag",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/sag/SKILL.md",
+        "description": "ElevenLabs text-to-speech with mac-style say UX."
+      },
+      {
+        "name": "session-logs",
+        "path": "/usr/lib/node_modules/openclaw/skills/session-logs",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/session-logs/SKILL.md",
+        "description": "Search and analyze your own session logs (older/parent conversations) using jq."
+      },
+      {
+        "name": "sherpa-onnx-tts",
+        "path": "/usr/lib/node_modules/openclaw/skills/sherpa-onnx-tts",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/sherpa-onnx-tts/SKILL.md",
+        "description": "Local text-to-speech via sherpa-onnx (offline, no cloud)"
+      },
+      {
+        "name": "skill-creator",
+        "path": "/usr/lib/node_modules/openclaw/skills/skill-creator",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+        "description": "Create or update AgentSkills. Use when designing, structuring, or packaging skills with scripts, references, and assets."
+      },
+      {
+        "name": "songsee",
+        "path": "/usr/lib/node_modules/openclaw/skills/songsee",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/songsee/SKILL.md",
+        "description": "Generate spectrograms and feature-panel visualizations from audio with the songsee CLI."
+      },
+      {
+        "name": "sonoscli",
+        "path": "/usr/lib/node_modules/openclaw/skills/sonoscli",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/sonoscli/SKILL.md",
+        "description": "Control Sonos speakers (discover/status/play/volume/group)."
+      },
+      {
+        "name": "spotify-player",
+        "path": "/usr/lib/node_modules/openclaw/skills/spotify-player",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/spotify-player/SKILL.md",
+        "description": "Terminal Spotify playback/search via spogo (preferred) or spotify_player."
+      },
+      {
+        "name": "summarize",
+        "path": "/usr/lib/node_modules/openclaw/skills/summarize",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/summarize/SKILL.md",
+        "description": "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for \u201ctranscribe this YouTube/video\u201d)."
+      },
+      {
+        "name": "things-mac",
+        "path": "/usr/lib/node_modules/openclaw/skills/things-mac",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/things-mac/SKILL.md",
+        "description": "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user asks OpenClaw to add a task to Things, list inbox/today/upcoming, search tasks, or inspect projects/areas/tags."
+      },
+      {
+        "name": "tmux",
+        "path": "/usr/lib/node_modules/openclaw/skills/tmux",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+        "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output."
+      },
+      {
+        "name": "trello",
+        "path": "/usr/lib/node_modules/openclaw/skills/trello",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/trello/SKILL.md",
+        "description": "Manage Trello boards, lists, and cards via the Trello REST API."
+      },
+      {
+        "name": "voice-call",
+        "path": "/usr/lib/node_modules/openclaw/skills/voice-call",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/voice-call/SKILL.md",
+        "description": "Start voice calls via the OpenClaw voice-call plugin."
+      },
+      {
+        "name": "wacli",
+        "path": "/usr/lib/node_modules/openclaw/skills/wacli",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/wacli/SKILL.md",
+        "description": "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats)."
+      },
+      {
+        "name": "weather",
+        "path": "/usr/lib/node_modules/openclaw/skills/weather",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/weather/SKILL.md",
+        "description": "Get current weather and forecasts (no API key required)."
+      }
+    ],
+    "data": [
+      {
+        "name": "apple-notes",
+        "path": "/usr/lib/node_modules/openclaw/skills/apple-notes",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/apple-notes/SKILL.md",
+        "description": "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders."
+      },
+      {
+        "name": "bear-notes",
+        "path": "/usr/lib/node_modules/openclaw/skills/bear-notes",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/bear-notes/SKILL.md",
+        "description": "Create, search, and manage Bear notes via grizzly CLI."
+      }
+    ],
+    "productivity": [
+      {
+        "name": "apple-reminders",
+        "path": "/usr/lib/node_modules/openclaw/skills/apple-reminders",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/apple-reminders/SKILL.md",
+        "description": "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output."
+      }
+    ],
+    "dev": [
+      {
+        "name": "coding-agent",
+        "path": "/usr/lib/node_modules/openclaw/skills/coding-agent",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/coding-agent/SKILL.md",
+        "description": "Run Codex CLI, Claude Code, OpenCode, or Pi Coding Agent via background process for programmatic control."
+      },
+      {
+        "name": "github",
+        "path": "/usr/lib/node_modules/openclaw/skills/github",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/github/SKILL.md",
+        "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+      }
+    ],
+    "comm": [
+      {
+        "name": "discord",
+        "path": "/usr/lib/node_modules/openclaw/skills/discord",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/discord/SKILL.md",
+        "description": "Use when you need to control Discord from OpenClaw via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage threads/pins/search, create/edit/delete channels and categories, fetch permissions or member/role/channel info, set bot presence/activity, or handle moderation actions in Discord DMs or channels."
+      },
+      {
+        "name": "slack",
+        "path": "/usr/lib/node_modules/openclaw/skills/slack",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/slack/SKILL.md",
+        "description": "Use when you need to control Slack from OpenClaw via the slack tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs."
+      }
+    ],
+    "media": [
+      {
+        "name": "gifgrep",
+        "path": "/usr/lib/node_modules/openclaw/skills/gifgrep",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/gifgrep/SKILL.md",
+        "description": "Search GIF providers with CLI/TUI, download results, and extract stills/sheets."
+      },
+      {
+        "name": "openai-image-gen",
+        "path": "/usr/lib/node_modules/openclaw/skills/openai-image-gen",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/openai-image-gen/SKILL.md",
+        "description": "Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery."
+      },
+      {
+        "name": "video-frames",
+        "path": "/usr/lib/node_modules/openclaw/skills/video-frames",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+        "description": "Extract frames or short clips from videos using ffmpeg."
+      }
+    ],
+    "sys": [
+      {
+        "name": "healthcheck",
+        "path": "/usr/lib/node_modules/openclaw/skills/healthcheck",
+        "skill_file": "/usr/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+        "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS)."
+      }
+    ]
+  },
+  "my_tools": [
+    {
+      "name": "api_server",
+      "path": "/config/clawd/tools/api_server.py",
+      "type": "python"
+    },
+    {
+      "name": "capability_registry",
+      "path": "/config/clawd/tools/capability_registry.py",
+      "type": "python"
+    },
+    {
+      "name": "claw_status",
+      "path": "/config/clawd/tools/claw_status.py",
+      "type": "python"
+    },
+    {
+      "name": "codegen",
+      "path": "/config/clawd/tools/codegen.py",
+      "type": "python"
+    },
+    {
+      "name": "execute_ideas",
+      "path": "/config/clawd/tools/execute_ideas.py",
+      "type": "python"
+    },
+    {
+      "name": "generate_activity_report",
+      "path": "/config/clawd/tools/generate_activity_report.py",
+      "type": "python"
+    },
+    {
+      "name": "generate_log_dashboard",
+      "path": "/config/clawd/tools/generate_log_dashboard.py",
+      "type": "python"
+    },
+    {
+      "name": "improve",
+      "path": "/config/clawd/tools/improve.py",
+      "type": "python"
+    },
+    {
+      "name": "netmon",
+      "path": "/config/clawd/tools/netmon.py",
+      "type": "python"
+    },
+    {
+      "name": "pattern_learner",
+      "path": "/config/clawd/tools/pattern_learner.py",
+      "type": "python"
+    },
+    {
+      "name": "run_safe",
+      "path": "/config/clawd/tools/run_safe.py",
+      "type": "python"
+    },
+    {
+      "name": "self_heal_daemon",
+      "path": "/config/clawd/tools/self_heal_daemon.py",
+      "type": "python"
+    },
+    {
+      "name": "self_monitor",
+      "path": "/config/clawd/tools/self_monitor.py",
+      "type": "python"
+    },
+    {
+      "name": "self_reflect",
+      "path": "/config/clawd/tools/self_reflect.py",
+      "type": "python"
+    },
+    {
+      "name": "smart_alerts",
+      "path": "/config/clawd/tools/smart_alerts.py",
+      "type": "python"
+    },
+    {
+      "name": "startup_briefing",
+      "path": "/config/clawd/tools/startup_briefing.py",
+      "type": "python"
+    },
+    {
+      "name": "weather_intel",
+      "path": "/config/clawd/tools/weather_intel.py",
+      "type": "python"
+    },
+    {
+      "name": "webwatch",
+      "path": "/config/clawd/tools/webwatch.py",
+      "type": "python"
+    },
+    {
+      "name": "wisdom",
+      "path": "/config/clawd/tools/wisdom.py",
+      "type": "python"
+    }
+  ]
+}
