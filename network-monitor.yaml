@@ -1,0 +1,43 @@
+# Network Monitor Configuration
+# Define services to monitor - services are optional by default
+# Set optional: false for critical services that should alert when down
+
+services:
+  - name: Home Assistant
+    host: localhost
+    port: 8123
+    type: http
+    expected_code: 401  # Returns 401 when unauthorized but healthy
+    optional: false
+
+  - name: External Internet
+    host: 1.1.1.1
+    port: 443
+    type: tcp
+    optional: false
+
+  - name: OpenClaw Gateway
+    host: localhost
+    port: 9000
+    type: http
+    expected_code: 200
+    optional: false
+
+  - name: Frigate NVR
+    host: localhost
+    port: 8080
+    type: http
+    expected_code: 200
+    optional: true
+
+  - name: MQTT Broker
+    host: localhost
+    port: 1883
+    type: tcp
+    optional: true
+
+  - name: SSH Server
+    host: localhost
+    port: 22
+    type: tcp
+    optional: true
