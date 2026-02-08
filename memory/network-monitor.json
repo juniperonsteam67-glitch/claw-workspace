@@ -1,8 +1,8 @@
 {
   "check": {
-    "timestamp": "2026-02-08T15:25:00+02:00",
+    "timestamp": "2026-02-08T15:45:00+02:00",
     "date": "2026-02-08",
-    "time": "15:25",
+    "time": "15:45",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c"
   },
   "services": {
@@ -14,7 +14,7 @@
     "OpenClaw Gateway (8080)": {
       "status": "UP",
       "optional": false,
-      "details": "HTTP 200"
+      "details": "HTTP 404 (server responding)"
     },
     "Plex (32400)": {
       "status": "DOWN",
