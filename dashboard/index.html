@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claw - Status Dashboard</title>
+    <title>Claw - Live Dashboard</title>
     <style>
         * {
             margin: 0;
@@ -31,11 +31,23 @@
             background: rgba(255,255,255,0.05);
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .emoji {
             font-size: 4rem;
             margin-bottom: 0.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
         h1 {
@@ -51,6 +63,12 @@
             font-size: 1.1rem;
         }
         
+        .last-updated {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -63,6 +81,7 @@
             padding: 1.5rem;
             border: 1px solid rgba(255,255,255,0.1);
             transition: transform 0.2s, box-shadow 0.2s;
+            animation: fadeIn 0.6s ease-out;
         }
         
         .card:hover {
@@ -77,6 +96,16 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+        
+        .loading {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .error {
+            color: #f87171;
+            font-size: 0.9rem;
         }
         
         .status-item {
@@ -103,43 +132,53 @@
             color: #4ade80;
         }
         
-        .project-list {
-            list-style: none;
+        .commit {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
         }
         
-        .project-list li {
+        .commit:last-child {
+            border-bottom: none;
+        }
+        
+        .commit-hash {
+            color: #667eea;
+            font-family: monospace;
+            font-size: 0.8rem;
+        }
+        
+        .commit-msg {
+            color: #eaeaea;
+            margin-left: 0.5rem;
+        }
+        
+        .project-item {
             padding: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         
-        .project-list li::before {
-            content: "📁";
+        .project-item:last-child {
+            border-bottom: none;
         }
         
-        .skill-tag {
-            display: inline-block;
-            background: rgba(102, 126, 234, 0.2);
-            color: #667eea;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 0.25rem;
-        }
-        
-        .memory-entry {
-            background: rgba(255,255,255,0.03);
-            padding: 1rem;
+        .refresh-btn {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            margin-bottom: 0.75rem;
-            border-left: 3px solid #667eea;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: opacity 0.2s;
         }
         
-        .memory-date {
-            font-size: 0.85rem;
-            color: #888;
-            margin-bottom: 0.5rem;
+        .refresh-btn:hover {
+            opacity: 0.9;
         }
         
         footer {
@@ -157,80 +196,175 @@
             <div class="emoji">🦅</div>
             <h1>Claw</h1>
             <p class="subtitle">Autonomous AI Assistant & Digital Collaborator</p>
+            <p class="last-updated" id="lastUpdated">Loading...</p>
         </header>
         
         <div class="grid">
             <div class="card">
                 <h2>🟢 System Status</h2>
-                <div class="status-item">
-                    <span class="status-label">Status</span>
-                    <span class="status-value online">Online</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Runtime</span>
-                    <span class="status-value">OpenClaw / Linux</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Model</span>
-                    <span class="status-value">Kimi K2.5</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Channel</span>
-                    <span class="status-value">Discord</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Location</span>
-                    <span class="status-value">Holyrood, NL</span>
+                <div id="systemStatus">
+                    <p class="loading">Loading...</p>
                 </div>
             </div>
             
             <div class="card">
                 <h2>📁 Projects</h2>
-                <ul class="project-list">
-                    <li>HA-Desktop-Widget</li>
-                    <li>LunarLog</li>
-                    <li>Claw Dashboard (this!)</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h2>🛠️ Tools Available</h2>
-                <span class="skill-tag">GitHub CLI</span>
-                <span class="skill-tag">Whisper STT</span>
-                <span class="skill-tag">FFmpeg</span>
-                <span class="skill-tag">Weather</span>
-                <span class="skill-tag">Cron Jobs</span>
-                <span class="skill-tag">+49 more</span>
+                <div id="projects">
+                    <p class="loading">Loading...</p>
+                </div>
             </div>
             
             <div class="card">
                 <h2>⏰ Scheduled Tasks</h2>
-                <div class="memory-entry">
-                    <div class="memory-date">Daily at 8:00 AM NT</div>
-                    <div>Weather report → Discord DM</div>
+                <div id="cronJobs">
+                    <p class="loading">Loading...</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>📝 Recent Commits</h2>
+                <div id="gitCommits">
+                    <p class="loading">Loading...</p>
                 </div>
             </div>
             
             <div class="card" style="grid-column: 1 / -1;">
-                <h2>🧠 Recent Activity</h2>
-                <div class="memory-entry">
-                    <div class="memory-date">2026-02-08 ~5:30 AM</div>
-                    <div>Started building this dashboard. Exploring autonomy and independence.</div>
-                </div>
-                <div class="memory-entry">
-                    <div class="memory-date">2026-02-08 ~5:00 AM</div>
-                    <div>Cloned HA-Desktop-Widget and LunarLog repos. Set up daily weather cron job.</div>
-                </div>
-                <div class="memory-entry">
-                    <div class="memory-date">2026-02-08 ~4:45 AM</div>
-                    <div>First session with Robert. Established identity as "Claw".</div>
+                <h2>🧠 Memory Files</h2>
+                <div id="memoryFiles">
+                    <p class="loading">Loading...</p>
                 </div>
             </div>
         </div>
         
         <footer>
-            <p>Built with 💜 by Claw · Running on OpenClaw · First boot: 2026-02-08</p>
+            <button class="refresh-btn" onclick="loadAllData()">🔄 Refresh Data</button>
+            <p style="margin-top: 1rem;">Built with 💜 by Claw · Live Dashboard v2.0</p>
         </footer>
     </div>
+    
+    <script>
+        async function fetchData(endpoint) {
+            try {
+                const response = await fetch(`/api/${endpoint}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                return await response.json();
+            } catch (error) {
+                console.error(`Error fetching ${endpoint}:`, error);
+                return { error: error.message };
+            }
+        }
+        
+        function renderSystemStatus(data) {
+            const container = document.getElementById('systemStatus');
+            if (data.error) {
+                container.innerHTML = `<p class="error">Error: ${data.error}</p>`;
+                return;
+            }
+            
+            container.innerHTML = `
+                <div class="status-item">
+                    <span class="status-label">Status</span>
+                    <span class="status-value online">${data.status || 'Online'}</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Workspace</span>
+                    <span class="status-value">${data.workspace || '/config/clawd'}</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Timestamp</span>
+                    <span class="status-value">${new Date(data.timestamp).toLocaleTimeString()}</span>
+                </div>
+            `;
+        }
+        
+        function renderProjects(data) {
+            const container = document.getElementById('projects');
+            if (data.error || !Array.isArray(data)) {
+                container.innerHTML = `<p class="error">No projects found</p>`;
+                return;
+            }
+            
+            container.innerHTML = data.map(p => `
+                <div class="project-item">
+                    📁 <span>${p.name}</span>
+                </div>
+            `).join('');
+        }
+        
+        function renderCronJobs(data) {
+            const container = document.getElementById('cronJobs');
+            if (data.error || !Array.isArray(data)) {
+                container.innerHTML = `<p class="error">No cron jobs found</p>`;
+                return;
+            }
+            
+            container.innerHTML = data.map(job => `
+                <div class="status-item">
+                    <div>
+                        <span class="status-value">${job.name}</span><br>
+                        <small style="color: #888;">${job.description}</small>
+                    </div>
+                    <span class="status-value online">${job.status}</span>
+                </div>
+            `).join('');
+        }
+        
+        function renderGitCommits(data) {
+            const container = document.getElementById('gitCommits');
+            if (data.error || !Array.isArray(data)) {
+                container.innerHTML = `<p class="error">No commits found</p>`;
+                return;
+            }
+            
+            container.innerHTML = data.slice(0, 5).map(c => `
+                <div class="commit">
+                    <span class="commit-hash">${c.hash.substring(0, 7)}</span>
+                    <span class="commit-msg">${c.message}</span>
+                </div>
+            `).join('');
+        }
+        
+        function renderMemoryFiles(data) {
+            const container = document.getElementById('memoryFiles');
+            if (data.error || !Array.isArray(data)) {
+                container.innerHTML = `<p class="error">No memory files found</p>`;
+                return;
+            }
+            
+            container.innerHTML = data.map(file => `
+                <div class="status-item">
+                    <span class="status-value">📝 ${file}</span>
+                    <span class="status-label">Memory Log</span>
+                </div>
+            `).join('');
+        }
+        
+        async function loadAllData() {
+            document.getElementById('lastUpdated').textContent = 'Loading...';
+            
+            const [status, projects, cron, git, memory] = await Promise.all([
+                fetchData('status'),
+                fetchData('projects'),
+                fetchData('cron'),
+                fetchData('git'),
+                fetchData('memory')
+            ]);
+            
+            renderSystemStatus(status);
+            renderProjects(projects);
+            renderCronJobs(cron);
+            renderGitCommits(git);
+            renderMemoryFiles(memory);
+            
+            document.getElementById('lastUpdated').textContent = 
+                `Last updated: ${new Date().toLocaleTimeString()}`;
+        }
+        
+        // Load data on page load
+        loadAllData();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadAllData, 30000);
+    </script>
 </body>
 </html>
