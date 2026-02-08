@@ -1,15 +1,15 @@
 {
   "check": {
-    "timestamp": "2026-02-08T17:00:42+02:00",
+    "timestamp": "2026-02-08T17:05:00+02:00",
     "date": "2026-02-08",
-    "time": "17:00",
-    "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c"
+    "time": "17:05",
+    "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
     "Home Assistant (localhost:8123)": {
       "status": "UP",
       "optional": false,
-      "details": "HTTP 401 (healthy, unauthorized)"
+      "details": "HTTP 200"
     },
     "OpenClaw Gateway (localhost:9000)": {
       "status": "UP",
@@ -19,7 +19,7 @@
     "External Internet (1.1.1.1:443)": {
       "status": "UP",
       "optional": false,
-      "details": "TCP connected"
+      "details": "HTTP 301 (redirect)"
     },
     "Frigate NVR (localhost:8080)": {
       "status": "UP",
