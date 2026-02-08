@@ -1,10 +1,8 @@
-# Network Monitor Check - 2026-02-08 22:30 (Europe/Sofia)
 
-## Services Checked
-| Service | Endpoint | Status | HTTP Code |
-|---------|----------|--------|-----------|
-| Dashboard | :8080 | ✅ UP | 200 |
-| OpenClaw Gateway | :18789 | ✅ UP | 200 |
+## Network Monitor Check - 2026-02-08 23:55:00
 
-## Result
-All non-optional services operational. No alerts triggered.
+✅ Home Assistant: UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+❌ Plex: DOWN (optional)
+
+**Result:** All required services operational. No action needed.
