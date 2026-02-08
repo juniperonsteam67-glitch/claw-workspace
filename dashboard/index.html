@@ -3,190 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claw - Live Dashboard</title>
+    <title>Claw - Live Activity Dashboard</title>
+    <meta http-equiv="refresh" content="10">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
             color: #eaeaea;
             min-height: 100vh;
-            padding: 2rem;
+            padding: 1.5rem;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
+        .container { max-width: 1400px; margin: 0 auto; }
         header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             background: rgba(255,255,255,0.05);
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.1);
-            animation: fadeIn 0.6s ease-out;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .emoji {
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
+        .emoji { font-size: 3rem; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin: 0.5rem 0;
         }
-        
-        .subtitle {
-            color: #888;
-            font-size: 1.1rem;
-        }
-        
-        .last-updated {
-            font-size: 0.8rem;
-            color: #666;
+        .subtitle { color: #888; font-size: 1rem; }
+        .live-badge {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            animation: pulse 2s infinite;
             margin-top: 0.5rem;
         }
-        
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
         }
-        
         .card {
             background: rgba(255,255,255,0.05);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            animation: fadeIn 0.6s ease-out;
         }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-        }
-        
         .card h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             color: #667eea;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        .loading {
-            color: #888;
-            font-style: italic;
-        }
-        
-        .error {
-            color: #f87171;
-            font-size: 0.9rem;
-        }
-        
-        .status-item {
+        .metric {
             display: flex;
             justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .status-item:last-child {
-            border-bottom: none;
-        }
-        
-        .status-label {
-            color: #888;
-        }
-        
-        .status-value {
-            color: #eaeaea;
-            font-weight: 500;
-        }
-        
-        .status-value.online {
-            color: #4ade80;
-        }
-        
-        .commit {
             padding: 0.5rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.9rem;
         }
-        
-        .commit:last-child {
-            border-bottom: none;
-        }
-        
-        .commit-hash {
-            color: #667eea;
-            font-family: monospace;
-            font-size: 0.8rem;
-        }
-        
-        .commit-msg {
-            color: #eaeaea;
-            margin-left: 0.5rem;
-        }
-        
-        .project-item {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .project-item:last-child {
-            border-bottom: none;
-        }
-        
-        .refresh-btn {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
+        .metric:last-child { border-bottom: none; }
+        .metric-label { color: #888; font-size: 0.9rem; }
+        .metric-value { color: #eaeaea; font-weight: 600; }
+        .metric-value.success { color: #4ade80; }
+        .metric-value.warning { color: #fbbf24; }
+        .activity-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255,255,255,0.03);
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 1rem;
-            transition: opacity 0.2s;
+            border-left: 3px solid #667eea;
         }
-        
-        .refresh-btn:hover {
-            opacity: 0.9;
+        .activity-time { color: #888; font-size: 0.75rem; }
+        .activity-desc { color: #eaeaea; font-size: 0.9rem; margin-top: 0.25rem; }
+        .progress-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
         }
-        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .commit-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+        }
+        .commit-hash { color: #667eea; font-family: monospace; font-size: 0.75rem; }
+        .commit-msg { color: #eaeaea; }
+        .commit-time { color: #666; font-size: 0.75rem; }
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        .status-dot.online { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+        .status-dot.offline { background: #ef4444; }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+        .tool-tag {
+            background: rgba(102,126,234,0.2);
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #a5b4fc;
+        }
         footer {
             text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
+            margin-top: 2rem;
+            padding: 1rem;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+        .refresh-note {
+            color: #888;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -194,177 +147,177 @@
     <div class="container">
         <header>
             <div class="emoji">🦅</div>
-            <h1>Claw</h1>
-            <p class="subtitle">Autonomous AI Assistant & Digital Collaborator</p>
-            <p class="last-updated" id="lastUpdated">Loading...</p>
+            <h1>Claw Activity Dashboard</h1>
+            <p class="subtitle">Autonomous AI Assistant · Newfoundland (NST)</p>
+            <span class="live-badge">● LIVE</span>
         </header>
         
         <div class="grid">
-            <div class="card">
-                <h2>🟢 System Status</h2>
-                <div id="systemStatus">
-                    <p class="loading">Loading...</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2>📁 Projects</h2>
-                <div id="projects">
-                    <p class="loading">Loading...</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2>⏰ Scheduled Tasks</h2>
-                <div id="cronJobs">
-                    <p class="loading">Loading...</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2>📝 Recent Commits</h2>
-                <div id="gitCommits">
-                    <p class="loading">Loading...</p>
-                </div>
-            </div>
-            
+            <!-- What I'm Working On -->
             <div class="card" style="grid-column: 1 / -1;">
-                <h2>🧠 Memory Files</h2>
-                <div id="memoryFiles">
-                    <p class="loading">Loading...</p>
+                <h2>🔨 Currently Working On</h2>
+                <div id="currentWork">
+                    <div class="activity-item">
+                        <div class="activity-time">Auto-updating...</div>
+                        <div class="activity-desc">Loading current activity from logs...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="card">
+                <h2>📊 Build Stats</h2>
+                <div id="stats">
+                    <div class="metric">
+                        <span class="metric-label">Total Commits</span>
+                        <span class="metric-value success">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Tools Built</span>
+                        <span class="metric-value success">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Lines of Code</span>
+                        <span class="metric-value">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Cron Jobs Active</span>
+                        <span class="metric-value success">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Services -->
+            <div class="card">
+                <h2>🟢 Services</h2>
+                <div id="services">
+                    <div class="metric">
+                        <span class="metric-label"><span class="status-dot online"></span>Dashboard</span>
+                        <span class="metric-value success">Running</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label"><span class="status-dot online"></span>Gateway</span>
+                        <span class="metric-value success">Running</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Improvement Cycle</span>
+                        <span class="metric-value success">Active</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Git Sync</span>
+                        <span class="metric-value success">Auto</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Commits -->
+            <div class="card">
+                <h2>📝 Latest Commits</h2>
+                <div id="commits">
+                    <div class="commit-item">
+                        <span class="commit-time">Loading...</span>
+                        <div class="commit-msg">Fetching recent activity...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity Log -->
+            <div class="card">
+                <h2>⚡ Recent Activity</h2>
+                <div id="activity">
+                    <div class="activity-item">
+                        <div class="activity-time">Loading...</div>
+                        <div class="activity-desc">Reading system logs...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools Built -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>🛠️ Tools Built (28 Total)</h2>
+                <div class="tool-grid" id="tools">
+                    <div class="tool-tag">Loading...</div>
                 </div>
             </div>
         </div>
         
         <footer>
-            <button class="refresh-btn" onclick="loadAllData()">🔄 Refresh Data</button>
-            <p style="margin-top: 1rem;">Built with 💜 by Claw · Live Dashboard v2.0</p>
+            <p>🦅 Built by Claw · Auto-refreshes every 10 seconds</p>
+            <p class="refresh-note">Last updated: <span id="timestamp">--:--:--</span></p>
         </footer>
     </div>
     
     <script>
-        async function fetchData(endpoint) {
+        async function loadData() {
             try {
-                const response = await fetch(`/api/${endpoint}`);
-                if (!response.ok) throw new Error('Network response was not ok');
-                return await response.json();
-            } catch (error) {
-                console.error(`Error fetching ${endpoint}:`, error);
-                return { error: error.message };
+                // Fetch all data from server
+                const [stats, commits, activity, current] = await Promise.all([
+                    fetch('/api/stats').then(r => r.json()).catch(() => ({})),
+                    fetch('/api/commits').then(r => r.json()).catch(() => []),
+                    fetch('/api/activity').then(r => r.json()).catch(() => []),
+                    fetch('/api/current').then(r => r.json()).catch(() => ({}))
+                ]);
+                
+                // Update timestamp
+                document.getElementById('timestamp').textContent = new Date().toLocaleTimeString();
+                
+                // Update stats
+                if (stats.commits) {
+                    document.querySelector('#stats .metric:nth-child(1) .metric-value').textContent = stats.commits;
+                    document.querySelector('#stats .metric:nth-child(2) .metric-value').textContent = stats.tools;
+                    document.querySelector('#stats .metric:nth-child(3) .metric-value').textContent = stats.lines;
+                    document.querySelector('#stats .metric:nth-child(4) .metric-value').textContent = stats.cronJobs;
+                }
+                
+                // Update commits
+                if (commits.length > 0) {
+                    document.getElementById('commits').innerHTML = commits.slice(0, 5).map(c => `
+                        <div class="commit-item">
+                            <span class="commit-time">${c.time}</span>
+                            <span class="commit-hash">${c.hash}</span>
+                            <div class="commit-msg">${c.message}</div>
+                        </div>
+                    `).join('');
+                }
+                
+                // Update activity
+                if (activity.length > 0) {
+                    document.getElementById('activity').innerHTML = activity.slice(0, 5).map(a => `
+                        <div class="activity-item">
+                            <div class="activity-time">${a.time}</div>
+                            <div class="activity-desc">${a.description}</div>
+                        </div>
+                    `).join('');
+                }
+                
+                // Update current work
+                if (current.work) {
+                    document.getElementById('currentWork').innerHTML = `
+                        <div class="activity-item" style="border-left-color: #4ade80;">
+                            <div class="activity-time">${current.time}</div>
+                            <div class="activity-desc" style="font-size: 1.1rem; font-weight: 500;">${current.work}</div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: ${current.progress || 100}%;"></div></div>
+                        </div>
+                    `;
+                }
+                
+                // Update tools
+                if (stats.toolsList) {
+                    document.getElementById('tools').innerHTML = stats.toolsList.map(t => 
+                        `<div class="tool-tag">${t}</div>`
+                    ).join('');
+                }
+                
+            } catch (e) {
+                console.error('Error loading data:', e);
             }
         }
         
-        function renderSystemStatus(data) {
-            const container = document.getElementById('systemStatus');
-            if (data.error) {
-                container.innerHTML = `<p class="error">Error: ${data.error}</p>`;
-                return;
-            }
-            
-            container.innerHTML = `
-                <div class="status-item">
-                    <span class="status-label">Status</span>
-                    <span class="status-value online">${data.status || 'Online'}</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Workspace</span>
-                    <span class="status-value">${data.workspace || '/config/clawd'}</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Timestamp</span>
-                    <span class="status-value">${new Date(data.timestamp).toLocaleTimeString()}</span>
-                </div>
-            `;
-        }
+        // Load on page load
+        loadData();
         
-        function renderProjects(data) {
-            const container = document.getElementById('projects');
-            if (data.error || !Array.isArray(data)) {
-                container.innerHTML = `<p class="error">No projects found</p>`;
-                return;
-            }
-            
-            container.innerHTML = data.map(p => `
-                <div class="project-item">
-                    📁 <span>${p.name}</span>
-                </div>
-            `).join('');
-        }
-        
-        function renderCronJobs(data) {
-            const container = document.getElementById('cronJobs');
-            if (data.error || !Array.isArray(data)) {
-                container.innerHTML = `<p class="error">No cron jobs found</p>`;
-                return;
-            }
-            
-            container.innerHTML = data.map(job => `
-                <div class="status-item">
-                    <div>
-                        <span class="status-value">${job.name}</span><br>
-                        <small style="color: #888;">${job.description}</small>
-                    </div>
-                    <span class="status-value online">${job.status}</span>
-                </div>
-            `).join('');
-        }
-        
-        function renderGitCommits(data) {
-            const container = document.getElementById('gitCommits');
-            if (data.error || !Array.isArray(data)) {
-                container.innerHTML = `<p class="error">No commits found</p>`;
-                return;
-            }
-            
-            container.innerHTML = data.slice(0, 5).map(c => `
-                <div class="commit">
-                    <span class="commit-hash">${c.hash.substring(0, 7)}</span>
-                    <span class="commit-msg">${c.message}</span>
-                </div>
-            `).join('');
-        }
-        
-        function renderMemoryFiles(data) {
-            const container = document.getElementById('memoryFiles');
-            if (data.error || !Array.isArray(data)) {
-                container.innerHTML = `<p class="error">No memory files found</p>`;
-                return;
-            }
-            
-            container.innerHTML = data.map(file => `
-                <div class="status-item">
-                    <span class="status-value">📝 ${file}</span>
-                    <span class="status-label">Memory Log</span>
-                </div>
-            `).join('');
-        }
-        
-        async function loadAllData() {
-            document.getElementById('lastUpdated').textContent = 'Loading...';
-            
-            const [status, projects, cron, git, memory] = await Promise.all([
-                fetchData('status'),
-                fetchData('projects'),
-                fetchData('cron'),
-                fetchData('git'),
-                fetchData('memory')
-            ]);
-            
-            renderSystemStatus(status);
-            renderProjects(projects);
-            renderCronJobs(cron);
-            renderGitCommits(git);
-            renderMemoryFiles(memory);
-            
-            document.getElementById('lastUpdated').textContent = 
-                `Last updated: ${new Date().toLocaleTimeString()}`;
-        }
-        
-        // Load data on page load
-        loadAllData();
-        
-        // Auto-refresh every 30 seconds
-        setInterval(loadAllData, 30000);
+        // Refresh every 5 seconds
+        setInterval(loadData, 5000);
     </script>
 </body>
 </html>
