@@ -1,11 +1,11 @@
-## Network Monitor Check - 2026-02-08 17:10:41
+## Network Monitor Check - 2026-02-08 17:40:00
 
-✅ Home Assistant (localhost:8123): UP **REQUIRED**
-✅ OpenClaw Gateway (localhost:9000): UP **REQUIRED**
-✅ External Internet (1.1.1.1:443): UP **REQUIRED**
-✅ Frigate NVR (localhost:8080): UP (optional)
-✅ MQTT Broker (localhost:1883): UP (optional)
-✅ SSH Server (localhost:22): UP (optional)
+✅ Home Assistant: UP **REQUIRED**
+✅ External Internet: UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+✅ Frigate NVR: UP (optional)
+✅ MQTT Broker: UP (optional)
+✅ SSH Server: UP (optional)
 
-**Summary:** 6/6 services operational (0 required down)
-
+---
+All non-optional services operational.
