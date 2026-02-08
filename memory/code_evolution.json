@@ -1,0 +1,43 @@
+{
+  "last_analysis": "2026-02-08T20:13:46.643548",
+  "total_files": 28,
+  "total_lines": 5320,
+  "average_score": 87.32142857142857,
+  "opportunities": 20,
+  "plan": {
+    "generated": "2026-02-08T20:13:46.643459",
+    "total_files": 20,
+    "high_priority": [],
+    "medium_priority": [
+      {
+        "file": "code_evolution.py",
+        "score": 75,
+        "issues": [
+          "2 TODO items",
+          "1 bare except clauses (should be specific)"
+        ],
+        "suggestions": [
+          "25 print statements - consider logging"
+        ],
+        "priority": "medium"
+      }
+    ],
+    "actions": [
+      {
+        "file": "code_evolution.py",
+        "action": "Fix issues: 2 TODO items, 1 bare except clauses (should be specific)",
+        "priority": "medium"
+      },
+      {
+        "file": "codegen.py",
+        "action": "Fix issues: 1 bare except clauses (should be specific)",
+        "priority": "low"
+      },
+      {
+        "file": "claw_learn.py",
+        "action": "Fix issues: 1 bare except clauses (should be specific)",
+        "priority": "low"
+      }
+    ]
+  }
+}
