@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "name": "Home Assistant",
+      "host": "homeassistant.local",
+      "port": 8123,
+      "optional": false
+    },
+    {
+      "name": "OpenClaw Gateway",
+      "host": "localhost",
+      "port": 8080,
+      "optional": false
+    },
+    {
+      "name": "Plex",
+      "host": "localhost",
+      "port": 32400,
+      "optional": true
+    }
+  ]
+}
