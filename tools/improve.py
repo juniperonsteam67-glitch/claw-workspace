@@ -150,21 +150,6 @@ This README is auto-generated. Last updated: """ + datetime.now().strftime('%Y-%
         log_action("execute_ideas", "warning", exec_result.stderr[:200])
         print("   ⚠️ Idea execution had issues")
     
-    # 5. Execute implementable ideas
-    print("\n🔨 Executing implementable ideas...")
-    exec_result = subprocess.run(
-        ["python3", "/config/clawd/tools/execute_ideas.py"],
-        capture_output=True, text=True
-    )
-    
-    if exec_result.returncode == 0:
-        log_action("execute_ideas", "success", "Idea execution completed")
-        improvements.append("Executed implementable ideas")
-        print("   ✓ Idea execution complete")
-    else:
-        log_action("execute_ideas", "warning", exec_result.stderr[:200])
-        print("   ⚠️ Idea execution had issues")
-    
     # Summary
     print("\n" + "=" * 50)
     print("📊 IMPROVEMENT SUMMARY")
@@ -181,7 +166,10 @@ This README is auto-generated. Last updated: """ + datetime.now().strftime('%Y-%
     
     return improvements
 
-if __name__ == "__main__":
+def main():
     improvements = run_improvement_cycle()
     print(f"\n💤 Robert is napping... Made {len(improvements)} improvements while he rests.")
     print("📋 Full log: memory/improvement_log.jsonl")
+
+if __name__ == "__main__":
+    main()
