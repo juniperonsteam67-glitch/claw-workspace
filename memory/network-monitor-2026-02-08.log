@@ -29,3 +29,13 @@ All non-optional services operational.
 ✅ MQTT Broker: UP (optional)
 ✅ SSH Server: UP (optional)
 
+
+## Network Monitor Check - 2026-02-08 18:15:18
+
+✅ Home Assistant: UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+✅ External Internet: UP **REQUIRED**
+✅ Frigate NVR: UP (optional)
+✅ MQTT Broker: UP (optional)
+✅ SSH Server: UP (optional)
+
