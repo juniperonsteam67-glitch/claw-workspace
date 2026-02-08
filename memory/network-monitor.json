@@ -1,8 +1,8 @@
 {
   "check": {
-    "timestamp": "2026-02-08T14:35:00+02:00",
+    "timestamp": "2026-02-08T15:15:00+02:00",
     "date": "2026-02-08",
-    "time": "14:35"
+    "time": "15:15"
   },
   "services": {
     "internet-connectivity": {
@@ -11,13 +11,13 @@
       "details": "301 redirect"
     },
     "dns-resolution": {
-      "status": "UP", 
+      "status": "UP",
       "method": "HTTPS 8.8.8.8",
       "details": "302 redirect"
     },
     "https-google": {
       "status": "UP",
-      "details": "301 redirect"
+      "details": "200 OK"
     },
     "https-discord": {
       "status": "UP",
