@@ -6,9 +6,8 @@
 # Runs: Every heartbeat (~30 min) as backup to 15-min cron
 
 Run improvement cycle if needed:
-- Check last improvement run timestamp
-- If > 20 minutes ago, execute: python3 /config/clawd/tools/improve.py
-- Then execute: python3 /config/clawd/tools/execute_ideas.py
+- Check last improvement run timestamp using: python3 /config/clawd/tools/heartbeat_check.py
+- This handles timezone correctly (N = Newfoundland Standard Time)
 - Log to heartbeat_log.jsonl
 
 ## Health Check Backup
