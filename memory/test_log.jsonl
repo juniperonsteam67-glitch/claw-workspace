@@ -1,1 +1,1 @@
-{"timestamp":"2026-02-08T19:31:42+02:00","trigger":"cron","total_tests":5,"passed":5,"failed":0,"status":"success","details":{"tool_existence":"pass","python_syntax":"pass","services_running":"pass","git_repository":"pass","memory_writable":"pass"}}
+{"timestamp":"2026-02-08T21:31:07+02:00","result":"PASS","passed":5,"failed":0,"total":5,"message":"All tests passed"}
