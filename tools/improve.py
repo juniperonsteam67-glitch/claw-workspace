@@ -135,6 +135,21 @@ This README is auto-generated. Last updated: """ + datetime.now().strftime('%Y-%
     improvements.append(f"Generated {len(ideas)} future project ideas")
     print(f"   ✓ Generated {len(ideas)} ideas for future work")
     
+    # 5. Execute implementable ideas
+    print("\n🔨 Executing implementable ideas...")
+    exec_result = subprocess.run(
+        ["python3", "/config/clawd/tools/execute_ideas.py"],
+        capture_output=True, text=True
+    )
+    
+    if exec_result.returncode == 0:
+        log_action("execute_ideas", "success", "Idea execution completed")
+        improvements.append("Executed implementable ideas")
+        print("   ✓ Idea execution complete")
+    else:
+        log_action("execute_ideas", "warning", exec_result.stderr[:200])
+        print("   ⚠️ Idea execution had issues")
+    
     # Summary
     print("\n" + "=" * 50)
     print("📊 IMPROVEMENT SUMMARY")
