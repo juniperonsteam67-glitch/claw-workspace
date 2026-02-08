@@ -7,9 +7,13 @@ Track my own resource usage and health
 import os
 import os
 os.environ['TZ'] = 'America/St_Johns'
+import time
+time.tzset()
 import subprocess
 import json
 from datetime import datetime
+
+WORKSPACE = "/config/clawd"
 
 WORKSPACE = "/config/clawd"
 

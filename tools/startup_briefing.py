@@ -5,6 +5,7 @@ Loads my state so I don't start fresh every time I wake up
 """
 
 import os
+import time
 import subprocess
 import json
 from datetime import datetime
@@ -12,6 +13,7 @@ from glob import glob
 
 # Set Newfoundland timezone
 os.environ['TZ'] = 'America/St_Johns'
+time.tzset()
 
 WORKSPACE = "/config/clawd"
 MEMORY_DIR = os.path.join(WORKSPACE, "memory")
