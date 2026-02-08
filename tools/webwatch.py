@@ -18,24 +18,43 @@ def ensure_dirs():
     os.makedirs(WATCH_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
-def get_site_hash(url):
-    """Fetch site and return content hash"""
-    try:
-        # Use curl to fetch
-        result = subprocess.run(
-            ["curl", "-s", "-L", "--max-time", "30", url],
-            capture_output=True,
-            text=True
-        )
-        if result.returncode == 0:
-            # Hash the content (normalized - remove dynamic stuff)
-            content = result.stdout
-            # Simple normalization
-            content = ' '.join(content.split())  # Normalize whitespace
-            return hashlib.sha256(content.encode()).hexdigest()[:16]
-        return None
-    except Exception as e:
-        return None
+def get_site_hash(url, retries=3):
+    """Fetch site and return content hash with retry logic"""
+    import time
+    
+    for attempt in range(retries):
+        try:
+            # Use curl to fetch with timeout
+            result = subprocess.run(
+                ["curl", "-s", "-L", "--max-time", "30", "--retry", "2", url],
+                capture_output=True,
+                text=True,
+                timeout=35
+            )
+            
+            if result.returncode == 0 and result.stdout:
+                # Hash the content (normalized - remove dynamic stuff)
+                content = result.stdout
+                # Simple normalization
+                content = ' '.join(content.split())  # Normalize whitespace
+                return hashlib.sha256(content.encode()).hexdigest()[:16]
+            
+            # Log failed attempt
+            log_event("fetch_attempt", "retry", f"Attempt {attempt + 1}/{retries} failed for {url}")
+            
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)  # Exponential backoff
+                
+        except subprocess.TimeoutExpired:
+            log_event("fetch_attempt", "timeout", f"Attempt {attempt + 1}/{retries} timed out for {url}")
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+        except Exception as e:
+            log_event("fetch_attempt", "error", f"Attempt {attempt + 1}/{retries} error: {str(e)}")
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+    
+    return None
 
 def check_site(url, name=None):
     """Check a single site for changes"""
