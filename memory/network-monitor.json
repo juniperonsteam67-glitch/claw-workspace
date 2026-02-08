@@ -1,0 +1,34 @@
+{
+  "check": {
+    "timestamp": "2026-02-08T14:35:00+02:00",
+    "date": "2026-02-08",
+    "time": "14:35"
+  },
+  "services": {
+    "internet-connectivity": {
+      "status": "UP",
+      "method": "HTTP 1.1.1.1",
+      "details": "301 redirect"
+    },
+    "dns-resolution": {
+      "status": "UP", 
+      "method": "HTTPS 8.8.8.8",
+      "details": "302 redirect"
+    },
+    "https-google": {
+      "status": "UP",
+      "details": "301 redirect"
+    },
+    "https-discord": {
+      "status": "UP",
+      "details": "200 OK"
+    }
+  },
+  "summary": {
+    "total": 4,
+    "up": 4,
+    "down": 0,
+    "optional-down": 0,
+    "non-optional-down": 0
+  }
+}
