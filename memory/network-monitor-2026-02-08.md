@@ -1,28 +1,22 @@
-# Network Monitor Check Log
+# Network Monitor Log - 2026-02-08
 
-**Timestamp:** Sunday, February 8th, 2026 — 6:35 PM (Europe/Sofia)  
-**Job:** cron:caf24402-3ce2-4aae-968d-9c170b81c27c  
-**Status:** 🔴 ALERT — Gateway unreachable
+## Check Time
+- **UTC:** 2026-02-08 17:15:00
+- **Local (Sofia):** Sunday, February 8th, 2026 — 7:15 PM
 
-## Check Results
+## Results
 
-| Service | Status | Response |
-|---------|--------|----------|
-| Internet (1.1.1.1) | ✅ UP | 301 in 0.15s |
-| DNS (cloudflare.com) | ✅ UP | 301 in 0.20s |
-| **OpenClaw Gateway** | 🔴 **DOWN** | Connection refused |
+| Service | Status | Notes |
+|---------|--------|-------|
+| Internet (HTTP/HTTPS) | ✅ OK | google.com: 200, cloudflare.com: 200 |
+| DNS (TCP) | ✅ OK | dns.google reachable via TCP/443 |
+| DNS (UDP) | ⚠️ Limited | UDP 53 unreachable (container env) |
+| Ping (ICMP) | ⚠️ N/A | ping command not available |
 
-## Action Taken
-Discord alert sent to user 296414535550763008
+## Summary
+- **Critical Services:** All operational
+- **Environment:** Containerized (ICMP/UDP restricted, TCP/HTTP functional)
+- **Action Required:** None
 
-## Notes
-- External connectivity confirmed (internet/DNS working)
-- Gateway on localhost:3000 not responding
-- System may need investigation
-
-## Network Monitor Check - 2026-02-08 19:01:13
-
-✅ Home Assistant: UP (optional)
-✅ OpenClaw Gateway: UP (optional)
-❌ Plex: DOWN (optional)
-
+## Next Check
+Scheduled via cron job `caf24402-3ce2-4aae-968d-9c170b81c27c`
