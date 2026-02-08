@@ -19,3 +19,10 @@ Discord alert sent to user 296414535550763008
 - External connectivity confirmed (internet/DNS working)
 - Gateway on localhost:3000 not responding
 - System may need investigation
+
+## Network Monitor Check - 2026-02-08 19:01:13
+
+✅ Home Assistant: UP (optional)
+✅ OpenClaw Gateway: UP (optional)
+❌ Plex: DOWN (optional)
+
