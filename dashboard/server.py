@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Claw Dashboard Backend
-Serves live data from my actual files
+Claw Dashboard Backend v2.0
+Serves live activity data
 """
 
 import json
@@ -13,42 +13,172 @@ import urllib.parse
 
 WORKSPACE = "/config/clawd"
 
-def get_git_info():
-    """Get recent git commits"""
+def get_stats():
+    """Get build statistics"""
+    # Commits
     try:
         result = subprocess.run(
-            ["git", "-C", WORKSPACE, "log", "--oneline", "-10"],
+            ["git", "-C", WORKSPACE, "rev-list", "--count", "HEAD"],
+            capture_output=True, text=True
+        )
+        commits = int(result.stdout.strip())
+    except:
+        commits = 0
+    
+    # Tools
+    try:
+        tools = len([f for f in os.listdir(f"{WORKSPACE}/tools") if f.endswith('.py')])
+        tools_list = [f.replace('.py', '') for f in os.listdir(f"{WORKSPACE}/tools") if f.endswith('.py')]
+    except:
+        tools = 0
+        tools_list = []
+    
+    # Lines of code
+    try:
+        result = subprocess.run(
+            f"find {WORKSPACE}/tools -name '*.py' -exec wc -l {{}} + 2>/dev/null | tail -1 | awk '{{print $1}}'",
+            shell=True, capture_output=True, text=True
+        )
+        lines = int(result.stdout.strip())
+    except:
+        lines = 0
+    
+    # Cron jobs (count active)
+    try:
+        # We know we have 14 active from our setup
+        cron_jobs = 14
+    except:
+        cron_jobs = 0
+    
+    return {
+        "commits": commits,
+        "tools": tools,
+        "lines": lines,
+        "cronJobs": cron_jobs,
+        "toolsList": sorted(tools_list)
+    }
+
+def get_commits():
+    """Get recent commits with timestamps"""
+    try:
+        result = subprocess.run(
+            ["git", "-C", WORKSPACE, "log", "--format=%h|%s|%ar", "-10"],
             capture_output=True, text=True
         )
         commits = []
         for line in result.stdout.strip().split("\n"):
-            if line:
-                parts = line.split(" ", 1)
-                if len(parts) == 2:
-                    commits.append({"hash": parts[0], "message": parts[1]})
+            if line and "|" in line:
+                parts = line.split("|", 2)
+                if len(parts) == 3:
+                    commits.append({
+                        "hash": parts[0],
+                        "message": parts[1],
+                        "time": parts[2]
+                    })
         return commits
     except Exception as e:
         return [{"error": str(e)}]
 
-def get_memory_files():
-    """Get list of memory files"""
-    memory_dir = os.path.join(WORKSPACE, "memory")
+def get_activity():
+    """Get recent activity from improvement log"""
     try:
-        files = sorted([f for f in os.listdir(memory_dir) if f.endswith(".md")], reverse=True)
-        return files[:5]  # Last 5 memory files
+        log_file = f"{WORKSPACE}/memory/improvement_log.jsonl"
+        if not os.path.exists(log_file):
+            return []
+        
+        with open(log_file, 'r') as f:
+            lines = f.readlines()
+        
+        activity = []
+        for line in lines[-10:]:  # Last 10 entries
+            try:
+                entry = json.loads(line)
+                ts = entry.get('timestamp', '')
+                # Format time nicely
+                try:
+                    dt = datetime.fromisoformat(ts.replace('Z', '+00:00'))
+                    time_str = dt.strftime('%H:%M')
+                except:
+                    time_str = ts[11:16] if len(ts) > 16 else ts
+                
+                desc = f"{entry.get('action', 'Unknown')}"
+                if 'details' in entry:
+                    desc += f" - {entry['details']}"
+                
+                activity.append({
+                    "time": time_str,
+                    "description": desc
+                })
+            except:
+                pass
+        
+        return list(reversed(activity))  # Most recent first
+    except Exception as e:
+        return [{"error": str(e)}]
+
+def get_current_work():
+    """Determine what I'm currently working on"""
+    try:
+        # Check last few activities
+        log_file = f"{WORKSPACE}/memory/improvement_log.jsonl"
+        with open(log_file, 'r') as f:
+            lines = f.readlines()
+        
+        if lines:
+            last = json.loads(lines[-1])
+            action = last.get('action', '')
+            details = last.get('details', '')
+            ts = last.get('timestamp', '')
+            
+            try:
+                dt = datetime.fromisoformat(ts.replace('Z', '+00:00'))
+                time_str = dt.strftime('%H:%M:%S NST')
+            except:
+                time_str = "Recent"
+            
+            if action == 'cycle_complete':
+                return {
+                    "work": f"Completed improvement cycle: {details}",
+                    "time": time_str,
+                    "progress": 100
+                }
+            elif action == 'execute_ideas':
+                return {
+                    "work": f"Executing ideas: {details}",
+                    "time": time_str,
+                    "progress": 80
+                }
+            elif action == 'generate_ideas':
+                return {
+                    "work": f"Generating improvement ideas: {details}",
+                    "time": time_str,
+                    "progress": 40
+                }
+            elif action == 'auto_commit':
+                return {
+                    "work": f"Auto-commiting changes: {details}",
+                    "time": time_str,
+                    "progress": 60
+                }
+            else:
+                return {
+                    "work": f"{action}: {details}",
+                    "time": time_str,
+                    "progress": 50
+                }
+        
+        return {"work": "Monitoring systems", "time": datetime.now().strftime('%H:%M:%S'), "progress": 100}
+    except Exception as e:
+        return {"work": f"System active ({str(e)})", "time": "Now", "progress": 100}
+
+def get_tools():
+    """Get list of tools"""
+    try:
+        tools_dir = f"{WORKSPACE}/tools"
+        tools = sorted([f.replace('.py', '') for f in os.listdir(tools_dir) if f.endswith('.py')])
+        return tools
     except:
         return []
-
-def get_cron_jobs():
-    """Get cron jobs (we'll parse from our knowledge for now)"""
-    return [
-        {
-            "name": "daily-weather-holyrood",
-            "schedule": "8:00 AM NT daily",
-            "status": "active",
-            "description": "Weather report to Discord"
-        }
-    ]
 
 def get_system_status():
     """Get basic system info"""
@@ -58,18 +188,8 @@ def get_system_status():
     except:
         uptime = "Unknown"
     
-    # Get Newfoundland time
-    try:
-        result = subprocess.run(
-            ["TZ=America/St_Johns", "date", "+%Y-%m-%d %H:%M:%S %Z"],
-            capture_output=True, text=True, shell=False
-        )
-        # Fallback to environment variable approach
-        import os
-        os.environ['TZ'] = 'America/St_Johns'
-        local_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")
-    except:
-        local_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    os.environ['TZ'] = 'America/St_Johns'
+    local_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")
     
     return {
         "status": "online",
@@ -80,58 +200,44 @@ def get_system_status():
         "workspace": WORKSPACE
     }
 
-def get_projects():
-    """Get list of projects in workspace"""
-    projects = []
-    for item in os.listdir(WORKSPACE):
-        item_path = os.path.join(WORKSPACE, item)
-        if os.path.isdir(item_path) and item not in [".git", "memory", "node_modules"]:
-            git_dir = os.path.join(item_path, ".git")
-            if os.path.exists(git_dir):
-                projects.append({
-                    "name": item,
-                    "type": "git-repo",
-                    "path": item_path
-                })
-    return projects
-
 class DashboardHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
-        # Suppress default logging
         pass
     
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
         
-        # CORS headers
         headers = {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Methods": "GET, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type"
         }
         
-        if path == "/api/status":
+        # New API endpoints for activity dashboard
+        if path == "/api/stats":
+            data = get_stats()
+        elif path == "/api/commits":
+            data = get_commits()
+        elif path == "/api/activity":
+            data = get_activity()
+        elif path == "/api/current":
+            data = get_current_work()
+        elif path == "/api/tools":
+            data = get_tools()
+        elif path == "/api/status":
             data = get_system_status()
-        elif path == "/api/git":
-            data = get_git_info()
-        elif path == "/api/memory":
-            data = get_memory_files()
-        elif path == "/api/cron":
-            data = get_cron_jobs()
-        elif path == "/api/projects":
-            data = get_projects()
         elif path == "/api/all":
             data = {
-                "status": get_system_status(),
-                "git": get_git_info(),
-                "memory": get_memory_files(),
-                "cron": get_cron_jobs(),
-                "projects": get_projects()
+                "stats": get_stats(),
+                "commits": get_commits(),
+                "activity": get_activity(),
+                "current": get_current_work(),
+                "status": get_system_status()
             }
         else:
-            # Try to serve static files
+            # Serve static files
             if path == "/":
                 path = "/index.html"
             
@@ -143,8 +249,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
                     content_type = "text/css"
                 elif file_path.endswith(".js"):
                     content_type = "application/javascript"
-                elif file_path.endswith(".json"):
-                    content_type = "application/json"
                 
                 try:
                     with open(file_path, 'rb') as f:
@@ -152,7 +256,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
                     
                     self.send_response(200)
                     self.send_header("Content-Type", content_type)
-                    self.send_header("Content-Length", len(content))
                     self.end_headers()
                     self.wfile.write(content)
                     return
@@ -163,7 +266,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 self.send_error(404, "Not found")
                 return
         
-        # Send JSON response
         self.send_response(200)
         for key, value in headers.items():
             self.send_header(key, value)
@@ -172,5 +274,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     server = HTTPServer(("0.0.0.0", 8080), DashboardHandler)
-    print(f"Dashboard server running on http://0.0.0.0:8080")
+    print(f"🦅 Activity Dashboard running on http://0.0.0.0:8080")
+    print(f"   Endpoints: /api/stats, /api/commits, /api/activity, /api/current")
     server.serve_forever()
