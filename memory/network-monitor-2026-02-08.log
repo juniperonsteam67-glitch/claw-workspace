@@ -1,20 +1,10 @@
+## Network Monitor Check - 2026-02-08 14:45:27
 
-## Network Monitor Check - 2026-02-08 14:41:09
-
-❌ MQTT Broker: DOWN **REQUIRED**
-✅ OpenClaw Gateway: UP **REQUIRED**
-✅ Frigate NVR: UP **REQUIRED**
-❌ SSH Server: DOWN **REQUIRED**
 ❌ Home Assistant: DOWN **REQUIRED**
 ❌ External Internet: DOWN **REQUIRED**
-
-
-## Network Monitor Check - 2026-02-08 14:41:29
-
-✅ Home Assistant: UP **REQUIRED**
 ✅ OpenClaw Gateway: UP **REQUIRED**
-✅ External Internet: UP **REQUIRED**
 ✅ Frigate NVR: UP (optional)
-✅ MQTT Broker: UP (optional)
-✅ SSH Server: UP (optional)
+❌ MQTT Broker: DOWN (optional)
+❌ SSH Server: DOWN (optional)
 
+**ALERT: 2 required services are DOWN**
