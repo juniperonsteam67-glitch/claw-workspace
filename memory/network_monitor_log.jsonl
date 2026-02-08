@@ -1,1 +1,1 @@
-{"timestamp":"2026-02-09T00:25:00+02:00","check":"network-monitor","services":{"dashboard":{"port":8080,"status":"UP","http_code":200},"gateway":{"port":18789,"status":"UP","http_code":200}},"alert_sent":false}
+{"timestamp":"2026-02-09T00:55:00+02:00","check":"network-monitor","results":{"dashboard":"UP (HTTP 200)","gateway":"UP (HTTP 200)"},"alert_sent":false}
