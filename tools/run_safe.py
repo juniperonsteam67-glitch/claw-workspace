@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
 """
 Claw's "Keep Working" Toolkit
 Wraps any command with logging, retry logic, and error recovery

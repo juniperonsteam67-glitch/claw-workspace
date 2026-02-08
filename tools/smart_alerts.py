@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
 """
 Claw Smart Alert System
 Monitors logs and sends alerts only for critical issues

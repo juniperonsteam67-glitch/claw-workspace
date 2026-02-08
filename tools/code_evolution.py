@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
 """
 Claw Code Evolution
 Self-analyzes and optimizes my own code

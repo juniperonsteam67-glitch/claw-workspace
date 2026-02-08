@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
 """
 Claw Heartbeat Trigger
 Backup system to ensure continuous operation

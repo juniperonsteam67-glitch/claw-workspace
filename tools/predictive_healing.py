@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
 """
 Claw Predictive Self-Healing
 Uses pattern analysis to predict and prevent failures
