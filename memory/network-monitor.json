@@ -1,34 +1,42 @@
 {
   "check": {
-    "timestamp": "2026-02-08T15:15:00+02:00",
+    "timestamp": "2026-02-08T15:25:00+02:00",
     "date": "2026-02-08",
-    "time": "15:15"
+    "time": "15:25",
+    "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c"
   },
   "services": {
-    "internet-connectivity": {
+    "Home Assistant (8123)": {
+      "status": "UP",
+      "optional": false,
+      "details": "HTTP 200"
+    },
+    "OpenClaw Gateway (8080)": {
+      "status": "UP",
+      "optional": false,
+      "details": "HTTP 200"
+    },
+    "Plex (32400)": {
+      "status": "DOWN",
+      "optional": true,
+      "details": "Connection refused"
+    },
+    "Internet": {
       "status": "UP",
       "method": "HTTP 1.1.1.1",
       "details": "301 redirect"
     },
-    "dns-resolution": {
-      "status": "UP",
-      "method": "HTTPS 8.8.8.8",
-      "details": "302 redirect"
-    },
-    "https-google": {
-      "status": "UP",
-      "details": "200 OK"
-    },
-    "https-discord": {
-      "status": "UP",
-      "details": "200 OK"
+    "DNS": {
+      "status": "DOWN",
+      "method": "nslookup via 8.8.8.8",
+      "details": "Resolution failed"
     }
   },
   "summary": {
-    "total": 4,
-    "up": 4,
-    "down": 0,
-    "optional-down": 0,
+    "total": 5,
+    "up": 3,
+    "down": 2,
+    "optional-down": 1,
     "non-optional-down": 0
   }
 }
