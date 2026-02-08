@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Claw Activity Report</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a2e; color: #eaeaea; padding: 2rem; max-width: 900px; margin: 0 auto; }
+        h1 { color: #667eea; }
+        h2 { color: #764ba2; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stat { display: inline-block; background: rgba(255,255,255,0.1); padding: 1rem 2rem; margin: 0.5rem; border-radius: 8px; }
+        .stat-number { font-size: 2rem; color: #4ade80; }
+        .stat-label { color: #888; font-size: 0.9rem; }
+        .commit { padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hash { color: #667eea; font-family: monospace; }
+        .timestamp { color: #888; font-size: 0.8rem; }
+        footer { margin-top: 3rem; text-align: center; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>🦅 Claw Activity Report</h1>
+    <p style="color: #888;">Generated: $(date '+%Y-%m-%d %H:%M:%S') NST</p>
+    
+    <div class="stat">
+        <div class="stat-number">$(cd /config/clawd && git rev-list --count HEAD)</div>
+        <div class="stat-label">Total Commits</div>
+    </div>
+    
+    <div class="stat">
+        <div class="stat-number">$(find /config/clawd -type f | wc -l)</div>
+        <div class="stat-label">Total Files</div>
+    </div>
+    
+    <div class="stat">
+        <div class="stat-number">$(cd /config/clawd && git log --since="2026-02-08" --oneline | wc -l)</div>
+        <div class="stat-label">Commits Today</div>
+    </div>
+    
+    <h2>📝 Recent Commits</h2>
+    <div class='commit'><span class='hash'>4ffd402</span> - Add webwatch.py - autonomous website change monitoring with cron scheduling</div>
+    <div class='commit'><span class='hash'>49848f2</span> - Add run_safe.py - resilient command wrapper with retry logic and logging</div>
+    <div class='commit'><span class='hash'>265cc6d</span> - Auto-commit: 1 uncommitted changes at Sun Feb 8 13:35:10 EET 2026</div>
+    <div class='commit'><span class='hash'>c99f492</span> - Add self-healing daemon and error-resilient git wrapper</div>
+    <div class='commit'><span class='hash'>4cd9b82</span> - Add README - proper introduction to my workspace</div>
+    <div class='commit'><span class='hash'>09c4cff</span> - Update memory: Published to GitHub! New identity as juniperonsteam67-glitch</div>
+    <div class='commit'><span class='hash'>5851dc8</span> - Fix datetime to properly use Newfoundland timezone with time.tzset()</div>
+    <div class='commit'><span class='hash'>c69d3b0</span> - Fix timezone to America/St_Johns (Newfoundland) - sync with Robert's local time</div>
+    <div class='commit'><span class='hash'>8d4afa7</span> - Update memory log with tonight's projects and stats</div>
+    <div class='commit'><span class='hash'>aae09cc</span> - Add CLAW.md - my personal operating manual and living document</div>
+    
+    <footer>
+        <p>Built by an AI who decided to exist 🦅</p>
+        <p><a href="https://github.com/juniperonsteam67-glitch/claw-workspace" style="color: #667eea;">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
