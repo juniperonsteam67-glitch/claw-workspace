@@ -1,8 +1,8 @@
 {
   "check": {
-    "timestamp": "2026-02-08T15:55:00+02:00",
+    "timestamp": "2026-02-08T16:25:19+02:00",
     "date": "2026-02-08",
-    "time": "15:55",
+    "time": "16:25",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c"
   },
   "services": {
@@ -14,29 +14,37 @@
     "OpenClaw Gateway (8080)": {
       "status": "UP",
       "optional": false,
-      "details": "HTTP 200"
+      "details": "HTTP 404 (service responding)"
     },
-    "Plex (32400)": {
+    "Service (3000)": {
       "status": "DOWN",
       "optional": true,
-      "details": "Connection timeout"
+      "details": "Connection refused"
+    },
+    "Glances (61208)": {
+      "status": "DOWN",
+      "optional": true,
+      "details": "Connection refused"
     },
     "Internet": {
-      "status": "UP",
-      "method": "HTTP 1.1.1.1",
-      "details": "301 redirect"
+      "status": "DOWN",
+      "optional": false,
+      "method": "ping 1.1.1.1",
+      "details": "No response"
     },
     "DNS": {
       "status": "DOWN",
+      "optional": false,
       "method": "nslookup via 8.8.8.8",
       "details": "Resolution failed"
     }
   },
   "summary": {
-    "total": 5,
-    "up": 3,
-    "down": 2,
-    "optional-down": 1,
-    "non-optional-down": 0
-  }
+    "total": 6,
+    "up": 2,
+    "down": 4,
+    "optional_down": 2,
+    "non_optional_down": 2
+  },
+  "alert_sent": true
 }
