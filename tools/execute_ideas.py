@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw Idea Executor
 Actually implements generated ideas automatically
 """
 
-import json
 import os
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
+
+import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
