@@ -1,50 +1,53 @@
 {
   "check": {
-    "timestamp": "2026-02-08T16:25:19+02:00",
+    "timestamp": "2026-02-08T11:05:27-03:30",
     "date": "2026-02-08",
-    "time": "16:25",
+    "time": "11:05",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c"
   },
   "services": {
-    "Home Assistant (8123)": {
+    "Home Assistant (localhost:8123)": {
       "status": "UP",
       "optional": false,
       "details": "HTTP 200"
     },
-    "OpenClaw Gateway (8080)": {
+    "Home Assistant (homeassistant.local:8123)": {
       "status": "UP",
       "optional": false,
-      "details": "HTTP 404 (service responding)"
+      "details": "HTTP 200"
     },
-    "Service (3000)": {
+    "OpenClaw Gateway (localhost:9000)": {
+      "status": "UP",
+      "optional": false,
+      "details": "HTTP 200"
+    },
+    "Frigate NVR (localhost:8080)": {
+      "status": "UP",
+      "optional": true,
+      "details": "HTTP 200"
+    },
+    "External Internet (1.1.1.1:443)": {
+      "status": "DOWN",
+      "optional": false,
+      "details": "Connection failed"
+    },
+    "MQTT Broker (localhost:1883)": {
       "status": "DOWN",
       "optional": true,
       "details": "Connection refused"
     },
-    "Glances (61208)": {
+    "SSH Server (localhost:22)": {
       "status": "DOWN",
       "optional": true,
       "details": "Connection refused"
-    },
-    "Internet": {
-      "status": "DOWN",
-      "optional": false,
-      "method": "ping 1.1.1.1",
-      "details": "No response"
-    },
-    "DNS": {
-      "status": "DOWN",
-      "optional": false,
-      "method": "nslookup via 8.8.8.8",
-      "details": "Resolution failed"
     }
   },
   "summary": {
-    "total": 6,
-    "up": 2,
-    "down": 4,
+    "total": 7,
+    "up": 4,
+    "down": 3,
     "optional_down": 2,
-    "non_optional_down": 2
+    "non_optional_down": 1
   },
   "alert_sent": false,
   "alert_error": "Discord guilds not configured in gateway config — cannot send DM to user 296414535550763008"

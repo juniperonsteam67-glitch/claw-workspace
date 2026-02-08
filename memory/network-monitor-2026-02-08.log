@@ -118,3 +118,26 @@
 ✅ MQTT Broker: UP (optional)
 ✅ SSH Server: UP (optional)
 
+
+## Network Monitor Check - 2026-02-08 11:05:27 NST
+
+✅ Home Assistant (localhost): UP **REQUIRED**
+✅ Home Assistant (homeassistant.local): UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+✅ Frigate NVR: UP (optional)
+❌ External Internet: DOWN **REQUIRED**
+❌ MQTT Broker: DOWN (optional)
+❌ SSH Server: DOWN (optional)
+
+**ALERT: 1 required service is DOWN**
+*Note: Discord alert failed — guilds not configured in gateway*
+
+## Network Monitor Check - 2026-02-08 16:40:35
+
+✅ Home Assistant: UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+✅ External Internet: UP **REQUIRED**
+✅ Frigate NVR: UP (optional)
+✅ MQTT Broker: UP (optional)
+✅ SSH Server: UP (optional)
+

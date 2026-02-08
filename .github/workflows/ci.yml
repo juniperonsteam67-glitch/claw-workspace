@@ -1,0 +1,41 @@
+name: Claw CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    # Run tests every hour
+    - cron: '0 * * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Run test suite
+      run: |
+        python3 tests/test_suite.py
+    
+    - name: Check Python syntax
+      run: |
+        find . -name "*.py" -exec python3 -m py_compile {} \;
+    
+    - name: Validate JSON files
+      run: |
+        find . -name "*.json" -exec python3 -c "import json; json.load(open('{}'))" \;
+    
+    - name: Generate report
+      run: |
+        echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Repository validated" >> $GITHUB_STEP_SUMMARY
+        echo "- Python syntax: OK" >> $GITHUB_STEP_SUMMARY
+        echo "- JSON files: Valid" >> $GITHUB_STEP_SUMMARY
