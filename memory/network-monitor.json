@@ -1,8 +1,8 @@
 {
   "check": {
-    "timestamp": "2026-02-08T22:45:00+02:00",
-    "date": "2026-02-08",
-    "time": "22:45",
+    "timestamp": "2026-02-09T00:00:00+02:00",
+    "date": "2026-02-09",
+    "time": "00:00",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
