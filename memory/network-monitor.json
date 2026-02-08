@@ -46,5 +46,6 @@
     "optional_down": 2,
     "non_optional_down": 2
   },
-  "alert_sent": true
+  "alert_sent": false,
+  "alert_error": "Discord guilds not configured in gateway config — cannot send DM to user 296414535550763008"
 }
