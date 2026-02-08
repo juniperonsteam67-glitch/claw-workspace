@@ -1,0 +1,5 @@
+[2026-02-08 21:35 EET] Network Monitor Check
+- Home Assistant (8123): UP (200)
+- OpenClaw Gateway (8080): UP (200)
+- Plex (32400): DOWN (optional service)
+Result: All required services operational
