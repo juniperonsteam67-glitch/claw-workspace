@@ -33,3 +33,7 @@
 {"timestamp": "2026-02-08T19:45:11.084047", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-08T19:45:11.084092", "type": "failed", "service": "Chromium Debug", "status": "DOWN", "details": "Changed from UP"}
 {"timestamp": "2026-02-08T19:45:11.089317", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T19:50:26.897942", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T19:50:26.898149", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T19:50:26.898291", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-08T19:50:26.903152", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
