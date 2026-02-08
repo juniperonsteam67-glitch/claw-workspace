@@ -37,3 +37,10 @@
 ✅ MQTT Broker: UP (optional)
 ✅ SSH Server: UP (optional)
 
+
+## Network Monitor Check - 2026-02-08 19:35:40
+
+✅ Home Assistant: UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+❌ Plex: DOWN (optional)
+
