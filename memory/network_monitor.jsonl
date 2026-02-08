@@ -1,0 +1,1 @@
+{"timestamp":"2026-02-09T00:10:00+02:00","check":"network-monitor-cron","services":{"dashboard":"unknown (sandbox restricted)","gateway":"unknown (sandbox restricted)"},"note":"Cannot perform direct service checks from sandbox environment - see self-heal-daemon logs for actual status","last_known_healthy":"2026-02-08T21:30:00+02:00","alert_sent":false}
