@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw Log Dashboard
 Aggregates all logs into a unified view
@@ -9,8 +6,12 @@ Aggregates all logs into a unified view
 
 import json
 import os
+import time
 from datetime import datetime
 from pathlib import Path
+
+os.environ["TZ"] = "America/St_Johns"
+time.tzset()
 
 WORKSPACE = "/config/clawd"
 LOGS = {

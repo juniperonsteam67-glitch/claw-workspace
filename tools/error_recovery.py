@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 os.environ["TZ"] = "America/St_Johns"
 import time
 time.tzset()
@@ -8,7 +9,6 @@ Automatically fixes common issues
 """
 
 import subprocess
-import os
 import json
 from datetime import datetime
 from pathlib import Path
