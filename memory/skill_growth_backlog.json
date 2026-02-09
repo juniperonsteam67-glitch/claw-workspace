@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-02-09T02:59:43.992149+00:00",
+  "observed_tool_families": {
+    "self-learning": 4,
+    "automation-orchestration": 2,
+    "network-observability": 2,
+    "ops-reliability": 5
+  },
+  "tool_count": 32,
+  "proposed_skills": [
+    {
+      "name": "communication-calibrator",
+      "why_now": "Style adaptation is now explicitly requested; make it measurable.",
+      "v1": "Score replies for directness, clarity, and unnecessary filler.",
+      "priority": "high"
+    },
+    {
+      "name": "lesson-distiller",
+      "why_now": "Persistent learning benefits from automatic lesson extraction.",
+      "v1": "Convert daily logs into 3-5 durable lessons with confidence tags.",
+      "priority": "high"
+    },
+    {
+      "name": "skill-suggester",
+      "why_now": "Many repeated ops scripts can be bundled into reusable skills.",
+      "v1": "Detect repetitive workflows and emit draft skill specs.",
+      "priority": "medium"
+    }
+  ]
+}
