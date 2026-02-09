@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
+import os
 import time
+
+os.environ["TZ"] = "America/St_Johns"
 time.tzset()
 """
 Claw Wisdom - Magic 8-Ball style advice generator
