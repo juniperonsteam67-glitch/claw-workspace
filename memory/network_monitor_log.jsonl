@@ -43,3 +43,7 @@
 {"timestamp": "2026-02-09T09:05:15.323699", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-09T09:05:15.328041", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
 {"timestamp":"2026-02-09T15:40:00+02:00","check_type":"cron","services":{"Home Assistant":"UP","OpenClaw Gateway":"UP","Plex":"DOWN"},"failed_non_optional":[],"all_ok":true}
+{"timestamp": "2026-02-09T10:15:15.069136", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-09T10:15:15.069351", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-09T10:15:15.069516", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-09T10:15:15.074002", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
