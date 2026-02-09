@@ -1,23 +1,21 @@
 {
   "check": {
-    "timestamp": "2026-02-09T21:35:00+02:00",
+    "timestamp": "2026-02-09T22:00:00+02:00",
     "date": "2026-02-09",
-    "time": "21:35",
+    "time": "22:00",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
     "Dashboard": { "status": "UP", "optional": false, "detail": "HTTP 200" },
     "OpenClaw Gateway": { "status": "UP", "optional": false, "detail": "HTTP 200" },
-    "Home Assistant": { "status": "UP", "optional": false, "detail": "HTTP 200" },
-    "External Internet": { "status": "UP", "optional": false, "detail": "HTTP 301" },
-    "Self-Heal Daemon": { "status": "UNKNOWN", "optional": false, "detail": "no systemd in container" },
-    "SSH Server": { "status": "UNKNOWN", "optional": true, "detail": "no systemd in container" }
+    "Chromium Debug": { "status": "DOWN", "optional": true, "detail": "Connection refused" },
+    "Self-Heal Daemon": { "status": "UP", "optional": false, "detail": "Running" }
   },
   "summary": {
-    "total": 6,
-    "up": 4,
-    "down": 0,
-    "optional_down": 0,
+    "total": 4,
+    "up": 3,
+    "down": 1,
+    "optional_down": 1,
     "non_optional_down": 0
   },
   "alert_sent": false,
