@@ -29,3 +29,7 @@
 {"timestamp": "2026-02-09T08:20:31.632417", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-09T08:20:31.636621", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
 {"timestamp": "2026-02-09T08:25:21.595598-03:30", "trigger": "cron", "action": "network_monitor_check", "results": [{"name": "Home Assistant", "host": "homeassistant.local", "port": 8123, "status": "UP", "optional": false}, {"name": "OpenClaw Gateway", "host": "localhost", "port": 8080, "status": "UP", "optional": false}, {"name": "Plex", "host": "localhost", "port": 32400, "status": "DOWN", "optional": true}], "alerts": 0}
+{"timestamp": "2026-02-09T08:35:19.950761", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-09T08:35:19.950970", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-09T08:35:19.951121", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-09T08:35:19.955972", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}

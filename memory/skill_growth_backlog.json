@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-09T03:06:51.886518+00:00",
+  "updated_at": "2026-02-09T12:01:52.949651+00:00",
   "ranking_formula": "(impact * frequency) / effort",
   "observed_tool_families": {
     "self-learning": 4,
@@ -7,7 +7,7 @@
     "network-observability": 2,
     "ops-reliability": 5
   },
-  "tool_count": 32,
+  "tool_count": 33,
   "proposed_skills_ranked": [
     {
       "name": "communication-calibrator",
