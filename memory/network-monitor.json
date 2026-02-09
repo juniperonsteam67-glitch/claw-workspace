@@ -1,8 +1,8 @@
 {
   "check": {
-    "timestamp": "2026-02-09T02:15:00+02:00",
+    "timestamp": "2026-02-09T03:05:00+02:00",
     "date": "2026-02-09",
-    "time": "02:15",
+    "time": "03:05",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
@@ -14,12 +14,12 @@
     "External Internet (1.1.1.1:443)": {
       "status": "UP",
       "optional": false,
-      "details": "HTTP 301 (redirect)"
+      "details": "HTTP 301"
     },
-    "OpenClaw Gateway (localhost:9000)": {
+    "OpenClaw Gateway (localhost:18789)": {
       "status": "UP",
       "optional": false,
-      "details": "HTTP 200"
+      "details": "Listening on :18789"
     },
     "Frigate NVR (localhost:8080)": {
       "status": "UP",
@@ -27,21 +27,21 @@
       "details": "HTTP 200"
     },
     "MQTT Broker (localhost:1883)": {
-      "status": "DOWN",
+      "status": "UP",
       "optional": true,
-      "details": "TCP connection failed"
+      "details": "TCP connected"
     },
     "SSH Server (localhost:22)": {
-      "status": "DOWN",
+      "status": "UP",
       "optional": true,
-      "details": "TCP connection failed"
+      "details": "TCP connected"
     }
   },
   "summary": {
     "total": 6,
-    "up": 4,
-    "down": 2,
-    "optional_down": 2,
+    "up": 6,
+    "down": 0,
+    "optional_down": 0,
     "non_optional_down": 0
   },
   "alert_sent": false,
