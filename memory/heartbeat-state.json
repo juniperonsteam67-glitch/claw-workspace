@@ -1,20 +1,20 @@
 {
   "lastChecks": {
-    "gateway": 1739115600,
-    "dashboard": 1739115600,
+    "gateway": 1739116500,
+    "dashboard": 1739116500,
     "disk": 1739048400,
     "self_heal": 1739048400,
-    "network_monitor": 1739115600
+    "network_monitor": 1739116500
   },
   "lastAlert": null,
   "logs": [
     {
-      "timestamp": 1739115600,
-      "datetime": "2026-02-09T17:40:00",
+      "timestamp": 1739116500,
+      "datetime": "2026-02-09T17:55:00",
       "service": "network-monitor-cron",
       "results": {
         "dashboard:8080": "UP (200)",
-        "gateway:18789": "UP (200)"
+        "gateway:18789": "UP (RPC ok)"
       },
       "alert_sent": false
     }
