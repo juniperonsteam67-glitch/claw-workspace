@@ -9,6 +9,7 @@ import os
 import subprocess
 import sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 # Force Newfoundland timezone
 os.environ['TZ'] = 'America/St_Johns'
@@ -21,7 +22,9 @@ def get_last_improvement_time():
             if not lines:
                 return None
             last = json.loads(lines[-1])
-            ts_str = last.get('timestamp', '')
+            ts_str = (last.get('timestamp') or '').strip()
+            if not ts_str:
+                return None
             # Parse ISO format
             if ts_str.endswith('Z'):
                 ts_str = ts_str[:-1] + '+00:00'
@@ -32,12 +35,7 @@ def get_last_improvement_time():
 
 def get_now_nst():
     """Get current time in Newfoundland timezone"""
-    # Use UTC and offset for NST (UTC-3:30)
-    utc_now = datetime.now(timezone.utc)
-    # NST is UTC-3:30 = -210 minutes
-    from datetime import timedelta
-    nst_offset = timezone(timedelta(hours=-3, minutes=-30))
-    return utc_now.astimezone(nst_offset)
+    return datetime.now(ZoneInfo('America/St_Johns'))
 
 def check_and_run_improvement():
     """Check if improvement is needed and run if so"""
@@ -50,9 +48,8 @@ def check_and_run_improvement():
     
     # Ensure both are timezone-aware
     if last_ts.tzinfo is None:
-        # Log timestamps are in local NST, make them aware
-        nst_offset = __import__('datetime').timezone(__import__('datetime').timedelta(hours=-3, minutes=-30))
-        last_ts = last_ts.replace(tzinfo=nst_offset)
+        # If timestamp is naive, treat it as local Newfoundland time
+        last_ts = last_ts.replace(tzinfo=ZoneInfo('America/St_Johns'))
     
     diff_minutes = (now - last_ts).total_seconds() / 60
     
