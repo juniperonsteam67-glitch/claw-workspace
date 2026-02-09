@@ -1,0 +1,2 @@
+{"timestamp":"2026-02-08T23:31:19+02:00","status":"success","backup_path":"/config/clawd/backups/20260208_233119","job_id":"ef317d84-7645-4df6-bad1-af470eeedb5d"}
+{"timestamp":"2026-02-09T03:31:37Z","job":"automated-backup","result":"success","exit_code":0,"output":"Backup created: /config/clawd/backups/20260209_000137"}

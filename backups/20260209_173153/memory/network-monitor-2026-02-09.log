@@ -1,0 +1,15 @@
+## Network Monitor Check - Monday, February 9th, 2026 - 4:25 PM (Europe/Sofia)
+
+| Service | Status | Required |
+|---------|--------|----------|
+| Home Assistant | ✅ UP | **YES** |
+| OpenClaw Gateway | ✅ UP | **YES** |
+| Plex | ❌ DOWN | optional |
+
+**Result:** All required services operational. No alerts needed.
+
+## Network Monitor Check - 2026-02-09 16:35:18
+
+
+Exit code: 0
+

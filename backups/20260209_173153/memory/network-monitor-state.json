@@ -1,0 +1,9 @@
+{
+  "checkTime": "2026-02-08T23:20:00+02:00",
+  "services": {
+    "dashboard": {"status": "UP", "code": 200, "endpoint": "http://localhost:8080"},
+    "openclaw_gateway": {"status": "UP", "code": 200, "endpoint": "http://localhost:18789"}
+  },
+  "allHealthy": true,
+  "alertSent": false
+}

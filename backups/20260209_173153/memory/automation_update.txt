@@ -1,0 +1,1 @@
+Idea generation: Every 15 min | Auto-execution: Immediate | Combined into single workflow

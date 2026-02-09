@@ -1,0 +1,32 @@
+{
+  "lastChecks": {
+    "gateway": 1739103300,
+    "dashboard": 1739103300,
+    "disk": 1739048400,
+    "self_heal": 1739048400,
+    "network_monitor": 1739103300
+  },
+  "lastAlert": null,
+  "logs": [
+    {
+      "timestamp": 1770595238,
+      "datetime": "2026-02-09T02:00:38.974959",
+      "service": "network-monitor-cron",
+      "results": {
+        "dashboard:8080": "UP (200)",
+        "gateway:18789": "UP (200)"
+      },
+      "alert_sent": false
+    },
+    {
+      "timestamp": 1739103300,
+      "datetime": "2026-02-09T15:35:00",
+      "service": "network-monitor-cron",
+      "results": {
+        "dashboard:8080": "UP (200)",
+        "gateway:18789": "UP (200)"
+      },
+      "alert_sent": false
+    }
+  ]
+}
