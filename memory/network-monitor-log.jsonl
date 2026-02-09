@@ -1,1 +1,5 @@
 {"check":{"timestamp":"2026-02-09T14:00:00+02:00","date":"2026-02-09","time":"14:00","trigger":"cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"},"services":{"Dashboard (localhost:8080)":{"status":"UP","optional":false,"details":"HTTP 200"},"OpenClaw Gateway (localhost:18789)":{"status":"UP","optional":false,"details":"HTTP 200"}},"summary":{"total":2,"up":2,"down":0,"optional_down":0,"non_optional_down":0},"alert_sent":false,"alert_reason":"All non-optional services operational - no alert needed"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:40:53.020755+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:40:53.042416+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:45:10.334918+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:45:10.358009+00:00"}
