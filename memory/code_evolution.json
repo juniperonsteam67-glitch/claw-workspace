@@ -1,12 +1,12 @@
 {
-  "last_analysis": "2026-02-09T12:02:46.135158",
+  "last_analysis": "2026-02-09T18:01:55.943643",
   "total_files": 33,
-  "total_lines": 6025,
-  "average_score": 90.45454545454545,
-  "opportunities": 15,
+  "total_lines": 6414,
+  "average_score": 90.9090909090909,
+  "opportunities": 14,
   "plan": {
-    "generated": "2026-02-09T12:02:46.135039",
-    "total_files": 15,
+    "generated": "2026-02-09T18:01:55.943565",
+    "total_files": 14,
     "high_priority": [],
     "medium_priority": [
       {
@@ -34,7 +34,7 @@
         "priority": "low"
       },
       {
-        "file": "claw_learn.py",
+        "file": "log_cleanup.py",
         "action": "Fix issues: 1 bare except clauses (should be specific)",
         "priority": "low"
       }
