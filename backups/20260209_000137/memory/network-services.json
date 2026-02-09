@@ -1,0 +1,14 @@
+{
+  "services": [
+    {
+      "name": "Dashboard",
+      "url": "http://localhost:8080",
+      "optional": false
+    },
+    {
+      "name": "OpenClaw Gateway",
+      "url": "http://localhost:18789",
+      "optional": false
+    }
+  ]
+}
