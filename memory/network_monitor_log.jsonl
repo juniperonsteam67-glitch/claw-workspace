@@ -1,1 +1,9 @@
 {"timestamp":"2026-02-09T00:55:00+02:00","check":"network-monitor","results":{"dashboard":"UP (HTTP 200)","gateway":"UP (HTTP 200)"},"alert_sent":false}
+{"timestamp": "2026-02-08T21:20:25.550517", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T21:20:25.550702", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T21:20:25.550839", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-08T21:20:25.555028", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T21:25:09.158904", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T21:25:09.159109", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-08T21:25:09.159246", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-08T21:25:09.164360", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
