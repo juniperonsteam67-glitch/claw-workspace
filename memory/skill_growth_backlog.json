@@ -1,5 +1,6 @@
 {
-  "updated_at": "2026-02-09T02:59:43.992149+00:00",
+  "updated_at": "2026-02-09T03:06:51.886518+00:00",
+  "ranking_formula": "(impact * frequency) / effort",
   "observed_tool_families": {
     "self-learning": 4,
     "automation-orchestration": 2,
@@ -7,24 +8,37 @@
     "ops-reliability": 5
   },
   "tool_count": 32,
-  "proposed_skills": [
+  "proposed_skills_ranked": [
     {
       "name": "communication-calibrator",
-      "why_now": "Style adaptation is now explicitly requested; make it measurable.",
-      "v1": "Score replies for directness, clarity, and unnecessary filler.",
-      "priority": "high"
+      "why_now": "Style adaptation should be measured, not guessed.",
+      "v1": "Score outputs for directness, clarity, and filler.",
+      "impact": 8,
+      "frequency": 7,
+      "effort": 3,
+      "score": 18.67
     },
     {
       "name": "lesson-distiller",
-      "why_now": "Persistent learning benefits from automatic lesson extraction.",
-      "v1": "Convert daily logs into 3-5 durable lessons with confidence tags.",
-      "priority": "high"
+      "why_now": "Persistent learning needs automatic daily distillation.",
+      "v1": "Extract 3-5 durable lessons with confidence and source tags.",
+      "impact": 9,
+      "frequency": 6,
+      "effort": 4,
+      "score": 13.5
     },
     {
       "name": "skill-suggester",
-      "why_now": "Many repeated ops scripts can be bundled into reusable skills.",
-      "v1": "Detect repetitive workflows and emit draft skill specs.",
-      "priority": "medium"
+      "why_now": "Repeated workflows should become reusable skills.",
+      "v1": "Detect repetitive workflows and generate draft skill specs.",
+      "impact": 7,
+      "frequency": 5,
+      "effort": 4,
+      "score": 8.75
     }
+  ],
+  "active_focus": [
+    "communication-calibrator",
+    "lesson-distiller"
   ]
 }
