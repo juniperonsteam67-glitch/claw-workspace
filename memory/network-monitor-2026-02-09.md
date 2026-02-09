@@ -1,20 +1,10 @@
-## Network Monitor Check - 2026-02-09 00:15:00
+# Network Monitor Log - 2026-02-09
 
-| Service | Status | Required |
-|---------|--------|----------|
-| Home Assistant | ✅ UP | **Yes** |
-| OpenClaw Gateway | ✅ UP | **Yes** |
-| Plex | ❌ DOWN | No (optional) |
+## Run: 3:05 PM Europe/Sofia (cron:caf24402-3ce2-4aae-968d-9c170b81c27c)
 
-**Result:** All required services operational.
+| Service | Endpoint | Status |
+|---------|----------|--------|
+| Dashboard | :8080 | ✅ UP (200) |
+| OpenClaw Gateway | :18789 | ✅ UP (200) |
 
-
-## Network Monitor Check - 2026-02-09 04:55:00
-
-| Service | Status | Required |
-|---------|--------|----------|
-| Home Assistant | ✅ UP | **Yes** |
-| OpenClaw Gateway | ✅ UP | **Yes** |
-| Plex | ❌ DOWN | No (optional) |
-
-**Result:** All required services operational.
+**Result:** All non-optional services operational. No alert sent.
