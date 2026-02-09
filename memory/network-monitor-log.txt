@@ -1,0 +1,12 @@
+[2026-02-09 17:10:27 NT] Network Monitor Check
+Services checked: 4
+
+Results:
+- Dashboard (http:8080): ✅ UP
+- OpenClaw Gateway (tcp:18789): ✅ UP  
+- Chromium Debug (tcp:9222): 🟡 DOWN (optional)
+- Self-Heal Daemon (process): ❌ DOWN (NON-OPTIONAL)
+
+Status: ALERT REQUIRED - Non-optional service down
+Action: Attempted Discord alert to 296414535550763008
+Issue: No Discord guild configured for DM delivery
