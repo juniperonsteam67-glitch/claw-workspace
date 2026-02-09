@@ -1,0 +1,112 @@
+GIT(1)                            Git Manual                            GIT(1)
+
+NAME
+       git - the stupid content tracker
+
+SYNOPSIS
+       git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<ppath>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envar>]
+           <command> [<args>]
+
+DESCRIPTION
+       Git is a fast, scalable, distributed revision control system with an
+       unusually rich command set that provides both high-level operations and
+       full access to internals.
+
+       See gittutorial(7) to get started, then see giteveryday(7) for a useful
+       minimum set of commands. The Git User's Manual[1] has a more in-depth
+       introduction.
+
+       After you mastered the basic concepts, you can come back to this page
+       to learn what commands Git offers. You can learn more about individual
+       Git commands with "git help command". gitcli(7) manual page gives you
+       an overview of the command-line interface conventions.
+
+OPTIONS
+       --version
+           Prints the Git suite version that the git program came from.
+
+       --help
+           Prints the synopsis and a list of the most commonly used commands.
+
+       -C <path>
+           Run as if git was started in <path> instead of the current working
+           directory.
+
+       -c <name>=<value>
+           Pass a configuration parameter to the command.
+
+       --git-dir=<path>
+           Set the path to the repository (".git" directory).
+
+       --work-tree=<path>
+           Set the path to the working tree.
+
+       --no-pager
+           Do not pipe Git output into a pager.
+
+COMMANDS
+       git-add
+           Add file contents to the index.
+
+       git-commit
+           Record changes to the repository.
+
+       git-push
+           Update remote refs along with associated objects.
+
+       git-pull
+           Fetch from and integrate with another repository or local branch.
+
+       git-clone
+           Clone a repository into a new directory.
+
+       git-status
+           Show the working tree status.
+
+       git-log
+           Show commit logs.
+
+       git-branch
+           List, create, or delete branches.
+
+EXAMPLES
+       Start a new repository:
+
+           $ git init
+
+       Clone an existing repository:
+
+           $ git clone https://github.com/user/repo.git
+
+       Stage files and commit:
+
+           $ git add .
+           $ git commit -m "Initial commit"
+
+       Push to remote:
+
+           $ git push origin main
+
+       Check status:
+
+           $ git status
+
+       View commit history:
+
+           $ git log --oneline
+
+       Create and switch to a new branch:
+
+           $ git checkout -b feature-branch
+
+SEE ALSO
+       gittutorial(7), giteveryday(7), gitcli(7), git-help(1)
+
+GIT
+       Part of the git(1) suite
+
+Git 2.43.0                        02/09/2025                            GIT(1)

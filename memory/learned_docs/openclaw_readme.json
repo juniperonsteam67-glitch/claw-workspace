@@ -1,0 +1,62 @@
+{
+  "type": "markdown",
+  "source": "memory/test_readme.md",
+  "title": "OpenClaw",
+  "description": "OpenClaw provides a modular architecture where AI agents can interact with various tools and services while maintaining privacy and security. The framework is designed to be self-hosted and gives users full control over their data.",
+  "sections": {
+    "Description": "OpenClaw provides a modular architecture where AI agents can interact with various tools and services while maintaining privacy and security. The framework is designed to be self-hosted and gives users full control over their data.",
+    "Installation": "",
+    "Usage": "",
+    "Basic Commands": "",
+    "Configuration": "Edit the `SOUL.md` file to customize your agent's personality and capabilities.",
+    "Commands": "- `openclaw gateway start` - Start the gateway daemon\n- `openclaw gateway stop` - Stop the gateway daemon\n- `openclaw gateway status` - Check gateway status\n- `openclaw learn <source>` - Learn from documentation\n- `openclaw query <keyword>` - Query learned knowledge",
+    "Options": "| Option | Description |\n|--------|-------------|\n| `--verbose` | Enable verbose output |\n| `--config PATH` | Use custom config file |\n| `--debug` | Enable debug mode |",
+    "Examples": "",
+    "Example 1: Start the gateway with verbose logging": "",
+    "Example 2: Learn from a man page": "",
+    "Example 3: Query for file operations": "",
+    "API Reference": "",
+    "Core Classes": "",
+    "Contributing": "Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.",
+    "License": "MIT License - see LICENSE file for details."
+  },
+  "commands": [
+    {
+      "command": "git clone https://github.com/example/openclaw.git",
+      "context": "example"
+    },
+    {
+      "command": "pip install -r requirements.txt",
+      "context": "example"
+    }
+  ],
+  "code_blocks": [
+    {
+      "language": "bash",
+      "content": "# Clone the repository\ngit clone https://github.com/example/openclaw.git\ncd openclaw\n\n# Install dependencies\npip install -r requirements.txt\n\n# Configure your environment\ncp .env.example .env\n# Edit .env with your settings"
+    },
+    {
+      "language": "bash",
+      "content": "# Start the gateway\nopenclaw gateway start\n\n# Check status\nopenclaw gateway status\n\n# Run a command\nopenclaw run \"your command here\""
+    },
+    {
+      "language": "bash",
+      "content": "openclaw gateway start --verbose"
+    },
+    {
+      "language": "bash",
+      "content": "openclaw learn man:curl"
+    },
+    {
+      "language": "bash",
+      "content": "openclaw query \"list files\""
+    },
+    {
+      "language": "python",
+      "content": "from openclaw import Agent, Tool\n\nagent = Agent()\nagent.load_tools()\nresult = agent.run(\"Hello\")"
+    }
+  ],
+  "learned_from": "memory/test_readme.md",
+  "source_type": "file",
+  "name": "openclaw_readme"
+}
