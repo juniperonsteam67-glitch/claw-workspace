@@ -1,22 +1,20 @@
 {
   "check": {
-    "timestamp": "2026-02-09T22:05:00+00:00",
+    "timestamp": "2026-02-09T22:20:38+00:00",
     "date": "2026-02-09",
-    "time": "18:35",
+    "time": "18:50",
     "tz": "America/St_Johns",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
     "Dashboard": { "status": "UP", "optional": false, "detail": "HTTP 200 - online" },
-    "OpenClaw Gateway": { "status": "UP", "optional": false, "detail": "Listening on :18789" },
-    "Chromium Debug": { "status": "DOWN", "optional": true, "detail": "Connection refused" },
-    "Self-Heal Daemon": { "status": "UP", "optional": false, "detail": "Running" }
+    "OpenClaw Gateway": { "status": "UP", "optional": false, "detail": "HTTP 200 - ws://:18789 responding" }
   },
   "summary": {
-    "total": 4,
-    "up": 3,
-    "down": 1,
-    "optional_down": 1,
+    "total": 2,
+    "up": 2,
+    "down": 0,
+    "optional_down": 0,
     "non_optional_down": 0
   },
   "alert_sent": false,

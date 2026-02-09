@@ -4,13 +4,13 @@
     "dashboard": 1739132700,
     "disk": 1739048400,
     "self_heal": 1739048400,
-    "network_monitor": 1739132700
+    "network_monitor": 1739134962
   },
   "lastAlert": null,
   "logs": [
     {
-      "timestamp": 1739132700,
-      "datetime": "2026-02-09T17:15:00",
+      "timestamp": 1739134962,
+      "datetime": "2026-02-09T19:42:42",
       "service": "network-monitor-cron",
       "results": {
         "dashboard:8080": "UP (200)",
