@@ -1,1 +1,3 @@
 {"timestamp":"2026-02-09T01:01:00+00:00","check":"network-monitor","trigger":"cron:caf24402-3ce2-4aae-968d-9c170b81c27c","result":"all_ok","services_checked":2,"up":2,"down":0,"alert_sent":false}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T01:15:09.810391+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T01:15:09.824799+00:00"}
