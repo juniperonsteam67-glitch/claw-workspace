@@ -1,25 +1,25 @@
 {
   "check": {
-    "timestamp": "2026-02-09T08:35:38-03:30",
+    "timestamp": "2026-02-09T14:18:00+02:00",
     "date": "2026-02-09",
-    "time": "08:35",
+    "time": "14:18",
     "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
   },
   "services": {
     "Dashboard": { "status": "UP", "optional": false },
     "OpenClaw Gateway": { "status": "UP", "optional": false },
-    "Chromium Debug": { "status": "DOWN", "optional": true },
+    "Chromium Debug": { "status": "UP", "optional": true },
     "Self-Heal Daemon": { "status": "UP", "optional": false },
     "Home Assistant": { "status": "UP", "optional": false },
     "External Internet": { "status": "UP", "optional": false },
-    "MQTT Broker": { "status": "UP", "optional": true },
-    "SSH Server": { "status": "UP", "optional": true }
+    "MQTT Broker": { "status": "DOWN", "optional": true },
+    "SSH Server": { "status": "DOWN", "optional": true }
   },
   "summary": {
     "total": 8,
-    "up": 7,
-    "down": 1,
-    "optional_down": 1,
+    "up": 6,
+    "down": 2,
+    "optional_down": 2,
     "non_optional_down": 0
   },
   "alert_sent": false,
