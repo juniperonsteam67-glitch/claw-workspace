@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw Smart Alert System
 Monitors logs and sends alerts only for critical issues
@@ -9,8 +6,16 @@ Monitors logs and sends alerts only for critical issues
 
 import json
 import os
+import subprocess
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
+
+os.environ["TZ"] = "America/St_Johns"
+try:
+    time.tzset()
+except Exception:
+    pass
 
 WORKSPACE = "/config/clawd"
 ALERT_STATE_FILE = os.path.join(WORKSPACE, "data", "alert_state.json")
@@ -59,24 +64,24 @@ def check_for_critical_issues():
             for line in lines[-5:]:
                 try:
                     entry = json.loads(line)
-                    if entry.get("status") == "DOWN" and entry.get("service"):
+                    service_name = entry.get("service")
+                    if entry.get("status") == "DOWN" and service_name:
+                        if service_name in {"Chromium Debug"}:
+                            continue
                         alerts.append({
                             "level": "CRITICAL",
-                            "service": entry.get("service"),
-                            "message": f"{entry.get('service')} is DOWN",
-                            "key": f"service_down_{entry.get('service')}"
+                            "service": service_name,
+                            "message": f"{service_name} is DOWN",
+                            "key": f"service_down_{service_name}"
                         })
                 except:
                     pass
     
     # Check for disk space critical
     try:
-        import subprocess
-        result = subprocess.run(
-            "df -h /config | tail -1 | awk '{print $5}' | sed 's/%//'",
-            shell=True, capture_output=True, text=True
-        )
-        disk_pct = int(result.stdout.strip())
+        result = subprocess.run(["df", "-P", "/config"], capture_output=True, text=True, timeout=8)
+        usage_field = result.stdout.strip().splitlines()[1].split()[4].replace('%', '')
+        disk_pct = int(usage_field)
         if disk_pct > 90:
             alerts.append({
                 "level": "CRITICAL",
@@ -84,7 +89,7 @@ def check_for_critical_issues():
                 "message": f"Disk usage critical: {disk_pct}%",
                 "key": "disk_space_critical"
             })
-    except:
+    except (IndexError, ValueError, subprocess.TimeoutExpired):
         pass
     
     # Check for repeated operation failures

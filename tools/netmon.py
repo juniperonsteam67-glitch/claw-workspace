@@ -21,7 +21,7 @@ DEFAULT_SERVICES = [
     {"name": "Dashboard", "host": "127.0.0.1", "port": 8080, "type": "http"},
     {"name": "OpenClaw Gateway", "host": "127.0.0.1", "port": 18789, "type": "tcp"},
     {"name": "Chromium Debug", "host": "127.0.0.1", "port": 9222, "type": "tcp", "optional": True},
-    {"name": "Self-Heal Daemon", "check": "pgrep -f self_heal_daemon.py", "type": "process"},
+    {"name": "Self-Heal Daemon", "check": ["pgrep", "-f", "self_heal_daemon.py"], "type": "process"},
 ]
 
 def log_event(event_type, service, status, details=""):
@@ -60,9 +60,13 @@ def check_http_service(host, port, path="/"):
 def check_process(cmd):
     """Check if a process is running"""
     try:
-        result = subprocess.run(cmd, shell=True, capture_output=True)
-        return result.returncode == 0 and result.stdout.strip()
-    except:
+        if isinstance(cmd, str):
+            parts = cmd.split()
+        else:
+            parts = cmd
+        result = subprocess.run(parts, capture_output=True, text=True, timeout=8)
+        return result.returncode == 0 and bool(result.stdout.strip())
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
         return False
 
 def check_service(service):
@@ -146,8 +150,12 @@ def run_monitor():
                     # Try to restart if we have a restart command
                     restart_cmd = service.get("restart")
                     if restart_cmd:
-                        subprocess.run(restart_cmd, shell=True)
-                        log_event("restart_attempt", name, "attempted")
+                        try:
+                            cmd = restart_cmd if isinstance(restart_cmd, list) else restart_cmd.split()
+                            subprocess.run(cmd, timeout=10, capture_output=True)
+                            log_event("restart_attempt", name, "attempted")
+                        except Exception as e:
+                            log_event("restart_attempt", name, "error", str(e))
         
         results.append({
             "name": name,

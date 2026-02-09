@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw API Server
 Simple REST API for external integrations
@@ -10,7 +7,14 @@ Simple REST API for external integrations
 import json
 import os
 import subprocess
+import time
 from datetime import datetime
+
+os.environ["TZ"] = "America/St_Johns"
+try:
+    time.tzset()
+except Exception:
+    pass
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import urllib.parse
 
@@ -36,11 +40,12 @@ def get_status():
 def get_services():
     """Get service status"""
     try:
-        dashboard = subprocess.run("ss -tlnp | grep :8080", shell=True, capture_output=True).returncode == 0
-        gateway = subprocess.run("ss -tlnp | grep :18789", shell=True, capture_output=True).returncode == 0
-    except:
+        result = subprocess.run(["ss", "-tlnp"], capture_output=True, text=True, timeout=8)
+        dashboard = ":8080" in result.stdout
+        gateway = ":18789" in result.stdout
+    except (subprocess.TimeoutExpired, OSError):
         dashboard = gateway = False
-    
+
     return {
         "dashboard": "up" if dashboard else "down",
         "gateway": "up" if gateway else "down"

@@ -23,8 +23,8 @@ RECOVERY_ACTIONS = {
         'description': 'Remove stale git lock file'
     },
     'dangling_processes': {
-        'check': lambda: len(subprocess.run("ps aux | grep chromium | grep -v grep", shell=True, capture_output=True).stdout.decode().strip().split('\n')) > 5,
-        'fix': lambda: subprocess.run("pkill -f chromium", shell=True, capture_output=True),
+        'check': lambda: len([l for l in subprocess.run(["ps", "aux"], capture_output=True, text=True, timeout=8).stdout.splitlines() if "chromium" in l and "grep" not in l]) > 5,
+        'fix': lambda: subprocess.run(["pkill", "-f", "chromium"], capture_output=True, timeout=8),
         'description': 'Kill excess chromium processes'
     },
     'large_logs': {

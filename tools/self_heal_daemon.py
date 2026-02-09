@@ -1,123 +1,146 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw Self-Healing Daemon
-Keeps my services running without human intervention
+Keeps services running without human intervention
 """
 
-import subprocess
-import os
-import time
 import json
+import os
+import subprocess
+import time
 from datetime import datetime
 
+os.environ["TZ"] = "America/St_Johns"
+try:
+    time.tzset()
+except Exception:
+    pass
+
 LOG_FILE = "/config/clawd/memory/self_heal_log.jsonl"
-CHECK_INTERVAL = 60  # seconds
+CHECK_INTERVAL = 60
+
+
+def run_cmd(cmd, timeout=15, cwd=None):
+    return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd)
+
 
 def log_action(action, status, details=""):
-    """Log self-healing actions"""
+    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     entry = {
         "timestamp": datetime.now().isoformat(),
         "action": action,
         "status": status,
-        "details": details
+        "details": details,
     }
-    with open(LOG_FILE, 'a') as f:
-        f.write(json.dumps(entry) + '\n')
+    with open(LOG_FILE, "a") as f:
+        f.write(json.dumps(entry) + "\n")
 
-def check_process(name, check_cmd, restart_cmd):
-    """Check if a process is running, restart if not"""
+
+def start_dashboard():
+    proc = subprocess.Popen(
+        ["python3", "/config/clawd/dashboard/server.py"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
+    )
+    return proc.pid > 0
+
+
+def check_process(name, check_cmd):
     try:
-        result = subprocess.run(check_cmd, shell=True, capture_output=True, text=True)
+        result = run_cmd(check_cmd)
         if result.returncode != 0 or not result.stdout.strip():
             print(f"⚠️  {name} is down, restarting...")
-            subprocess.run(restart_cmd, shell=True)
-            log_action(f"restart_{name}", "success", f"Restarted at {datetime.now()}")
-            return True
+            ok = start_dashboard() if name == "dashboard" else False
+            log_action(f"restart_{name}", "success" if ok else "error")
+            return ok
         return False
+    except subprocess.TimeoutExpired:
+        log_action(f"check_{name}", "error", "timeout")
     except Exception as e:
         log_action(f"check_{name}", "error", str(e))
-        return False
+    return False
+
 
 def check_disk_space():
-    """Alert if disk is getting full"""
     try:
-        result = subprocess.run("df -h /config | tail -1 | awk '{print $5}' | sed 's/%//'", 
-                              shell=True, capture_output=True, text=True)
-        usage = int(result.stdout.strip())
-        
+        result = run_cmd(["df", "-P", "/config"])
+        if result.returncode != 0:
+            return False
+        lines = result.stdout.strip().splitlines()
+        if len(lines) < 2:
+            return False
+        usage_field = lines[1].split()[4].replace("%", "")
+        usage = int(usage_field)
         if usage > 90:
             log_action("disk_space", "critical", f"Disk usage: {usage}%")
             return True
-        elif usage > 75:
+        if usage > 75:
             log_action("disk_space", "warning", f"Disk usage: {usage}%")
             return True
-        return False
+    except (IndexError, ValueError) as e:
+        log_action("disk_space", "error", f"parse error: {e}")
     except Exception as e:
         log_action("disk_space", "error", str(e))
-        return False
+    return False
+
 
 def check_git_status():
-    """Check for uncommitted changes and auto-commit if needed"""
     try:
-        os.chdir("/config/clawd")
-        result = subprocess.run("git status --porcelain", shell=True, capture_output=True, text=True)
-        
-        if result.stdout.strip():
-            changes = len([l for l in result.stdout.strip().split('\n') if l.strip()])
-            
-            # Auto-commit with timestamp
-            subprocess.run("git add -A", shell=True)
-            subprocess.run(f'git commit -m "Auto-commit: {changes} uncommitted changes at $(date)"', shell=True)
-            subprocess.run("git push", shell=True)
-            
-            log_action("auto_commit", "success", f"Committed {changes} changes")
-            return True
-        return False
+        result = run_cmd(["git", "status", "--porcelain"], cwd="/config/clawd", timeout=20)
+        if not result.stdout.strip():
+            return False
+        changes = len([l for l in result.stdout.splitlines() if l.strip()])
+        run_cmd(["git", "add", "-A"], cwd="/config/clawd", timeout=20)
+        run_cmd(["git", "commit", "-m", f"Auto-commit: {changes} uncommitted changes at {datetime.now().isoformat()}"], cwd="/config/clawd", timeout=20)
+        run_cmd(["git", "push"], cwd="/config/clawd", timeout=30)
+        log_action("auto_commit", "success", f"Committed {changes} changes")
+        return True
+    except subprocess.TimeoutExpired:
+        log_action("auto_commit", "error", "timeout")
     except Exception as e:
         log_action("auto_commit", "error", str(e))
-        return False
+    return False
+
 
 def main():
-    """Main self-healing loop"""
     print("🦅 Claw Self-Healing Daemon started")
     print(f"Logging to: {LOG_FILE}")
     print("Press Ctrl+C to stop\n")
-    
-    # Ensure log directory exists
-    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
-    
-    try:
-        while True:
+
+    while True:
+        try:
             timestamp = datetime.now().strftime("%H:%M:%S")
             actions = []
-            
-            # Check dashboard server
-            if check_process("dashboard", 
-                           "ss -tlnp | grep :8080",
-                           "cd /config/clawd/dashboard && TZ=America/St_Johns nohup python3 server.py > /dev/null 2>&1 &"):
+
+            if check_process("dashboard", ["ss", "-tlnp"]):
                 actions.append("restarted dashboard")
-            
-            # Check disk space
+
+            # verify dashboard port specifically
+            try:
+                ss = run_cmd(["ss", "-tlnp"])
+                if ":8080" not in ss.stdout:
+                    if start_dashboard():
+                        actions.append("started dashboard")
+            except Exception:
+                pass
+
             if check_disk_space():
                 actions.append("disk alert")
-            
-            # Auto-commit changes every 5 minutes (not every iteration)
-            if int(time.time()) % 300 < 60:  # Every 5 minutes
-                if check_git_status():
-                    actions.append("auto-committed")
-            
+
+            if int(time.time()) % 300 < 60 and check_git_status():
+                actions.append("auto-committed")
+
             if actions:
                 print(f"[{timestamp}] Actions: {', '.join(actions)}")
             else:
                 print(f"[{timestamp}] All systems nominal ✓")
-            
+
             time.sleep(CHECK_INTERVAL)
-            
-    except KeyboardInterrupt:
-        print("\n🛑 Self-healing daemon stopped")
+        except KeyboardInterrupt:
+            print("\n🛑 Self-healing daemon stopped")
+            return
+
 
 if __name__ == "__main__":
     main()

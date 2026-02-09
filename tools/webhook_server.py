@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw Webhook Server
 External triggers and status queries via HTTP
@@ -10,7 +7,14 @@ External triggers and status queries via HTTP
 import json
 import os
 import subprocess
+import time
 from datetime import datetime
+
+os.environ["TZ"] = "America/St_Johns"
+try:
+    time.tzset()
+except Exception:
+    pass
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import urllib.parse
 
@@ -96,8 +100,9 @@ class WebhookHandler(BaseHTTPRequestHandler):
             tools = len([f for f in os.listdir(f"{WORKSPACE}/tools") if f.endswith('.py')])
             
             # Check services
-            dashboard = subprocess.run("ss -tlnp | grep :8080", shell=True, capture_output=True).returncode == 0
-            
+            ss_result = subprocess.run(["ss", "-tlnp"], capture_output=True, text=True, timeout=8)
+            dashboard = ":8080" in ss_result.stdout
+
             self.send_json({
                 'status': 'online',
                 'timestamp': datetime.now().isoformat(),
