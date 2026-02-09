@@ -27,7 +27,7 @@ def get_status():
             ["git", "-C", WORKSPACE, "rev-list", "--count", "HEAD"],
             capture_output=True, text=True
         ).stdout.strip()
-    except:
+    except (subprocess.SubprocessError, ValueError, OSError):
         commits = "0"
     
     return {
@@ -59,7 +59,7 @@ def get_recent_commits(limit=5):
             capture_output=True, text=True
         )
         return [line.strip() for line in result.stdout.strip().split('\n') if line.strip()]
-    except:
+    except (subprocess.SubprocessError, OSError):
         return []
 
 class APIHandler(BaseHTTPRequestHandler):

@@ -44,17 +44,18 @@ def check_tcp_port(host, port):
         result = sock.connect_ex((host, port))
         sock.close()
         return result == 0
-    except:
+    except OSError:
         return False
 
 def check_http_service(host, port, path="/"):
     """Check if HTTP service responds"""
     try:
         import urllib.request
+        import urllib.error
         url = f"http://{host}:{port}{path}"
         response = urllib.request.urlopen(url, timeout=5)
         return response.status == 200
-    except:
+    except (urllib.error.URLError, TimeoutError, OSError):
         return False
 
 def check_process(cmd):
@@ -124,7 +125,7 @@ def run_monitor():
                     if entry.get("service") == name and entry.get("type") == "status":
                         prev_status = entry.get("status")
                         break
-        except:
+        except (OSError, json.JSONDecodeError):
             pass
         
         # Log status

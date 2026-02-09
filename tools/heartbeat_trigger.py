@@ -43,7 +43,7 @@ def check_last_improvement():
             if lines:
                 last_entry = json.loads(lines[-1])
                 return datetime.fromisoformat(last_entry['timestamp'].replace('Z', '+00:00'))
-    except:
+    except (OSError, json.JSONDecodeError, ValueError):
         pass
     
     return None
