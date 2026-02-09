@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-os.environ["TZ"] = "America/St_Johns"
-import time
-time.tzset()
 """
 Claw Activity Visualizer
 Generates HTML visualizations of my activity
@@ -9,6 +6,10 @@ Generates HTML visualizations of my activity
 
 import json
 import os
+
+os.environ["TZ"] = "America/St_Johns"
+import time
+time.tzset()
 import subprocess
 from datetime import datetime, timedelta
 from collections import defaultdict
