@@ -19,3 +19,13 @@ Exit code: 0
 
 Exit code: 0
 
+
+## Network Monitor Check - 2026-02-09 18:45:08
+
+✅ Home Assistant: UP **REQUIRED**
+✅ OpenClaw Gateway: UP **REQUIRED**
+✅ External Internet: UP **REQUIRED**
+✅ Frigate NVR: UP (optional)
+✅ MQTT Broker: UP (optional)
+✅ SSH Server: UP (optional)
+
