@@ -106,14 +106,17 @@ This README is auto-generated. Last updated: """ + datetime.now().strftime('%Y-%
         capture_output=True, text=True
     )
     
-    if "DOWN" not in result.stdout:
-        log_action("health_check", "success", "All services up")
-        improvements.append("Health check passed - all systems nominal")
-        print("   ✓ All services healthy")
+    # netmon status prints:
+    # 🟢/🟡/🔴 where 🔴 means NON-optional service down.
+    # Optional services may be DOWN and should not fail health check.
+    if "🔴" not in result.stdout:
+        log_action("health_check", "success", "Core services healthy")
+        improvements.append("Health check passed - core systems nominal")
+        print("   ✓ Core services healthy")
     else:
-        log_action("health_check", "warning", "Some services down")
-        improvements.append("⚠️ Some services need attention")
-        print("   ⚠️ Issues detected")
+        log_action("health_check", "warning", "Non-optional service(s) down")
+        improvements.append("⚠️ Core services need attention")
+        print("   ⚠️ Core issues detected")
     
     # 4. Generate future project ideas
     print("\n💡 Generating improvement ideas...")
