@@ -1,0 +1,73 @@
+{"check":{"timestamp":"2026-02-09T14:00:00+02:00","date":"2026-02-09","time":"14:00","trigger":"cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"},"services":{"Dashboard (localhost:8080)":{"status":"UP","optional":false,"details":"HTTP 200"},"OpenClaw Gateway (localhost:18789)":{"status":"UP","optional":false,"details":"HTTP 200"}},"summary":{"total":2,"up":2,"down":0,"optional_down":0,"non_optional_down":0},"alert_sent":false,"alert_reason":"All non-optional services operational - no alert needed"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:40:53.020755+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:40:53.042416+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:45:10.334918+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:45:10.358009+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:50:32.725746+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T12:50:32.738675+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:00:31.069558+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:00:31.084994+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:15:14.007394+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:15:14.021860+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:20:34.224362+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:20:34.246556+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:50:21.337259+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T13:50:21.356968+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T14:05:16.929425+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T14:05:16.954709+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T14:41:13.413593+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T14:41:13.432851+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:05:09.202820+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:05:09.217212+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:15:07.851185+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:15:07.876241+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:20:24.122561+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:20:24.137322+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:35:13.816403+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:35:13.843638+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:50:26.432506+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T15:50:26.447759+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:10:47.420733+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:10:47.440600+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:20:32.019276+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:20:32.040263+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:35:11.131789+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:35:11.155953+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:40:28.072753+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:40:28.093163+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:55:12.669582+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T16:55:12.693068+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T17:05:13.421898+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T17:05:13.439664+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T19:50:59.009415+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T19:50:59.029287+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T19:55:13.287577+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T19:55:13.306669+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "DOWN", "optional": false, "timestamp": "2026-02-09T20:20:34.056044+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T20:20:34.071096+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T20:55:13.013271+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T20:55:13.030007+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T21:10:38.035517+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T21:10:38.054465+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T22:00:56.136578+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T22:00:56.149587+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T22:10:42.040520+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T22:10:42.055185+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-09T22:15:11.115579+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T22:15:11.144752+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "DOWN", "optional": false, "timestamp": "2026-02-09T23:41:12.100847+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-09T23:41:12.127979+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:00:54.036812+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:00:54.056124+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:25:11.790952+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:25:11.808226+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:45:22.471744+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:45:22.484010+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:55:18.566491+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T00:55:18.589517+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T01:40:46.157970+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T01:40:46.178390+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T03:01:48.450735+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T03:01:48.470223+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T03:25:13.273656+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T03:25:13.291956+00:00"}
