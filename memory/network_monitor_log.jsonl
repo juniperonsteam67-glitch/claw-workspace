@@ -34,3 +34,8 @@
 {"timestamp": "2026-02-10T16:10:25.485352", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-10T16:10:25.490722", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
 {"timestamp":"2026-02-10T17:50:00-03:30","check":"network-monitor","services":{"dashboard":"OK","gateway":"OK"},"alert_needed":false}
+{"timestamp": "2026-02-10T18:25:11.764370", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T18:25:11.764584", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T18:25:11.764729", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T18:25:11.768712", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T18:25:11.768771", "type": "failed", "service": "Self-Heal Daemon", "status": "DOWN", "details": "Changed from UP"}
