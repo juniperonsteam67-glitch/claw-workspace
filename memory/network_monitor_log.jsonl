@@ -3,3 +3,4 @@
 {"timestamp": "2026-02-10T08:35:12.125056", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
 {"timestamp": "2026-02-10T08:35:12.125201", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-10T08:35:12.129311", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp":"2026-02-10T08:35:45","type":"recovery","service":"Self-Heal Daemon","action":"restarted","pid":14377}
