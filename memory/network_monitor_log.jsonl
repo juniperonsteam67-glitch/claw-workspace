@@ -1,1 +1,1 @@
-{"timestamp":"2026-02-10T00:35:00-03:30","job":"network-monitor-check","services":{"dashboard:8080":"UP (pid 5473)","gateway:18789":"UP (pid 118)"},"alert_sent":false}
+[{"timestamp":"2026-02-10T02:05:00-03:30","check":"network-monitor","services":[{"name":"dashboard","port":8080,"status":"UP","http_code":200,"pid":6061},{"name":"gateway","port":18789,"status":"UP","http_code":200,"pid":118}],"alert_sent":false,"note":"All critical services operational"}]
