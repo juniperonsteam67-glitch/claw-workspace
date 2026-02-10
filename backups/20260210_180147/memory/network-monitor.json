@@ -1,0 +1,22 @@
+{
+  "check": {
+    "timestamp": "2026-02-10T04:40:00+00:00",
+    "date": "2026-02-10",
+    "time": "01:10",
+    "tz": "America/St_Johns",
+    "trigger": "cron:caf24402-3ce2-4aae-968d-9c170b81c27c network-monitor-check"
+  },
+  "services": {
+    "Dashboard": { "status": "UP", "optional": false, "detail": "HTTP 200 - online" },
+    "OpenClaw Gateway": { "status": "UP", "optional": false, "detail": "HTTP 200 - ws://:18789 responding" }
+  },
+  "summary": {
+    "total": 2,
+    "up": 2,
+    "down": 0,
+    "optional_down": 0,
+    "non_optional_down": 0
+  },
+  "alert_sent": false,
+  "alert_reason": "All non-optional services operational"
+}

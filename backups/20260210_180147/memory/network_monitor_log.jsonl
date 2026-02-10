@@ -1,0 +1,36 @@
+{"timestamp":"2026-02-10T09:35:04-03:30","check":"network-monitor","triggered_by":"cron:caf24402-3ce2-4aae-968d-9c170b81c27c","services":{"dashboard":"UP","gateway":"UP"},"alert_sent":false,"notes":"All non-optional services operational"}
+{"timestamp": "2026-02-10T11:01:16.900247", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T11:01:16.900434", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T11:01:16.900604", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T11:01:16.904966", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T11:35:12.627639", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T11:35:12.627839", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T11:35:12.627982", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T11:35:12.631856", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T11:35:12", "type": "alert", "service": "Self-Heal Daemon", "status": "DOWN", "details": "Non-optional service DOWN. Discord alert attempted to user 296414535550763008 but failed - no DM channel configured."}
+{"timestamp": "2026-02-10T12:40:42.894224", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:40:42.894427", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:40:42.894594", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T12:40:42.898661", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T12:41:06.998757", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:41:06.998949", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:41:06.999090", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T12:41:07.003061", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:41:07.003137", "type": "recovered", "service": "Self-Heal Daemon", "status": "UP", "details": "Changed from DOWN"}
+{"timestamp": "2026-02-10T12:55:12.124234", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:55:12.124443", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T12:55:12.124612", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T12:55:12.128799", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T13:35:16.644136", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T13:35:16.644343", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T13:35:16.644507", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T13:35:16.648488", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T13:45:13.667193", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T13:45:13.667398", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T13:45:13.667560", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T13:45:13.671912", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T16:10:25.484992", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T16:10:25.485209", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T16:10:25.485352", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T16:10:25.490722", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
+{"timestamp":"2026-02-10T17:50:00-03:30","check":"network-monitor","services":{"dashboard":"OK","gateway":"OK"},"alert_needed":false}

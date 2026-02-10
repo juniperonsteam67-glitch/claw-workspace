@@ -1,0 +1,1 @@
+{"timestamp":"2026-02-10T14:05:00-03:30","check":"network-monitor","services":[{"name":"dashboard","host":"localhost","port":8080,"status":"UP","optional":false},{"name":"gateway","host":"localhost","port":18789,"status":"UP","optional":false}],"down_count":0,"alert_sent":false}

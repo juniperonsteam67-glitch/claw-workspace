@@ -1,0 +1,1 @@
+{"timestamp":"2026-02-09T13:45:00+02:00","services":[{"name":"Dashboard","url":"http://localhost:8080","status":"UP","http_code":200,"optional":false},{"name":"OpenClaw Gateway","url":"http://localhost:18789","status":"UP","http_code":200,"optional":false}],"all_healthy":true,"alert_sent":false}

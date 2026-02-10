@@ -1,0 +1,66 @@
+{
+  "type": "manpage",
+  "name": "git_manual",
+  "description": "Git is a fast, scalable, distributed revision control system with an\n       unusually rich command set that provides both high-level operations and\n       full access to internals.\n\n       See gittutorial(7) to get started, then see giteveryday(7) for a useful\n       minimum set of commands. The Git User's Manual[1] has a more in-depth\n       introduction.\n\n       After you mastered the basic concepts, you can come back to this page\n       to learn what commands Git offers. You can learn more about individual\n       Git commands with \"git help command\". gitcli(7) manual page gives you\n       an overview of the command-line interface conventions.",
+  "synopsis": "git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<ppath>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envar>]\n           <command> [<args>]",
+  "options": [
+    {
+      "flag": "--help",
+      "argument": "",
+      "description": " Prints the synopsis and a list of the most commonly used commands."
+    },
+    {
+      "flag": "-C",
+      "argument": "",
+      "description": "<path> Run as if git was started in <path> instead of the current working directory."
+    },
+    {
+      "flag": "-c",
+      "argument": "",
+      "description": "<name>=<value> Pass a configuration parameter to the command."
+    },
+    {
+      "flag": "--git-dir",
+      "argument": "",
+      "description": "=<path> Set the path to the repository (\".git\" directory)."
+    },
+    {
+      "flag": "--work-tree",
+      "argument": "",
+      "description": "=<path> Set the path to the working tree."
+    },
+    {
+      "flag": "--no-pager",
+      "argument": "",
+      "description": " Do not pipe Git output into a pager."
+    }
+  ],
+  "examples": [
+    "git init",
+    "Clone an existing repository:",
+    "git clone https://github.com/user/repo.git",
+    "Stage files and commit:",
+    "git add .",
+    "git commit -m \"Initial commit\"",
+    "Push to remote:",
+    "git push origin main",
+    "Check status:",
+    "git status",
+    "View commit history:",
+    "git log --oneline",
+    "Create and switch to a new branch:",
+    "git checkout -b feature-branch"
+  ],
+  "sections": {
+    "NAME": "git - the stupid content tracker",
+    "SYNOPSIS": "git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<ppath>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envar>]\n           <command> [<args>]",
+    "DESCRIPTION": "Git is a fast, scalable, distributed revision control system with an\n       unusually rich command set that provides both high-level operations and\n       full access to internals.\n\n       See gittutorial(7) to get started, then see giteveryday(7) for a useful\n       minimum set of commands. The Git User's Manual[1] has a more in-depth\n       introduction.\n\n       After you mastered the basic concepts, you can come back to this page\n       to learn what commands Git offers. You can learn more about individual\n       Git commands with \"git help command\". gitcli(7) manual page gives you\n       an overview of the command-line interface conventions.",
+    "OPTIONS": "--version\n           Prints the Git suite version that the git program came from.\n\n       --help\n           Prints the synopsis and a list of the most commonly used commands.\n\n       -C <path>\n           Run as if git was started in <path> instead of the current working\n           directory.\n\n       -c <name>=<value>\n           Pass a configuration parameter to the command.\n\n       --git-dir=<path>\n           Set the path to the repository (\".git\" directory).\n\n       --work-tree=<path>\n           Set the path to the working tree.\n\n       --no-pager\n           Do not pipe Git output into a pager.",
+    "COMMANDS": "git-add\n           Add file contents to the index.\n\n       git-commit\n           Record changes to the repository.\n\n       git-push\n           Update remote refs along with associated objects.\n\n       git-pull\n           Fetch from and integrate with another repository or local branch.\n\n       git-clone\n           Clone a repository into a new directory.\n\n       git-status\n           Show the working tree status.\n\n       git-log\n           Show commit logs.\n\n       git-branch\n           List, create, or delete branches.",
+    "EXAMPLES": "Start a new repository:\n\n           $ git init\n\n       Clone an existing repository:\n\n           $ git clone https://github.com/user/repo.git\n\n       Stage files and commit:\n\n           $ git add .\n           $ git commit -m \"Initial commit\"\n\n       Push to remote:\n\n           $ git push origin main\n\n       Check status:\n\n           $ git status\n\n       View commit history:\n\n           $ git log --oneline\n\n       Create and switch to a new branch:\n\n           $ git checkout -b feature-branch",
+    "SEE ALSO": "gittutorial(7), giteveryday(7), gitcli(7), git-help(1)",
+    "GIT": "Part of the git(1) suite\n\nGit 2.43.0                        02/09/2025                            GIT(1)"
+  },
+  "learned_from": "memory/test_manpage.txt",
+  "source_type": "file"
+}

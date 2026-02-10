@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Claw Autolearn daily at 9 AM NT
+Requires=autolearn-daily.service
+
+[Timer]
+OnCalendar=*-*-* 09:00:00
+Timezone=America/St_Johns
+Persistent=true
+
+[Install]
+WantedBy=timers.target
