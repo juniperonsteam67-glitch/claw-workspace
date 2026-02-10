@@ -1,1 +1,2 @@
 {"timestamp":"2026-02-08T22:10:00+02:00","check":"network-monitor","services":{"dashboard:8080":"UP","openclaw-gateway:18789":"UP","rpc":"ok"},"alert_sent":false}
+{"timestamp":"2026-02-09T23:25:00-03:30","checks":{"dashboard:8080":"UP (200)","gateway:18789":"UP (200)"},"alert_sent":false}
