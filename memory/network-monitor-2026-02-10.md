@@ -1,10 +1,8 @@
-# Network Monitor Check - 2026-02-10 14:45 NT
+# Network Monitor Check — 2026-02-10 14:50 NT
 
-## Service Status
-| Service | Port | Status | HTTP Code |
-|---------|------|--------|-----------|
-| Dashboard | 8080 | UP | 200 |
-| OpenClaw Gateway | 18789 | UP | 200 |
+| Service | Status | Response |
+|---------|--------|----------|
+| Dashboard (:8080) | UP | Serving static content |
+| Gateway (:18789) | UP | 200 OK |
 
-## Result
-✅ All non-optional services operational. No alerts needed.
+**Result:** All services operational. No action required.
