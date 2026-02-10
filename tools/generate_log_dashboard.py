@@ -31,7 +31,12 @@ def read_log(log_file):
         with open(log_file, 'r') as f:
             for line in f:
                 try:
-                    entries.append(json.loads(line))
+                    data = json.loads(line)
+                    # Handle both single entries and arrays
+                    if isinstance(data, list):
+                        entries.extend(data)
+                    else:
+                        entries.append(data)
                 except:
                     pass
     return entries
