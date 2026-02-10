@@ -93,3 +93,5 @@
 {"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T12:35:08.595442+00:00"}
 {"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T12:40:51.534409+00:00"}
 {"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T12:40:51.552558+00:00"}
+{"name": "Dashboard", "url": "http://localhost:8080", "status": "UP", "optional": false, "timestamp": "2026-02-10T13:25:07.020752+00:00"}
+{"name": "OpenClaw Gateway", "url": "http://localhost:18789", "status": "UP", "optional": false, "timestamp": "2026-02-10T13:25:07.047191+00:00"}
