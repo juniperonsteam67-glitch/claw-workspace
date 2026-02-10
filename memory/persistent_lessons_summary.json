@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-09T03:06:51.886829+00:00",
+  "updated_at": "2026-02-10T10:45:40.250434+00:00",
   "total_lessons": 3,
   "categories": {
     "communication": 1,
@@ -10,9 +10,5 @@
     "Prefer direct, non-corporate responses; skip filler.",
     "Ask before external/public actions; be bold with internal workspace actions.",
     "Robert preference: collaborative tone, direct execution, night-owl rhythm."
-  ],
-  "cleanup": {
-    "archived": 0,
-    "deduped": 0
-  }
+  ]
 }
