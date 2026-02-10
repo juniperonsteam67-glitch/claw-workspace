@@ -1,1 +1,4 @@
-[{"timestamp":"2026-02-10T02:05:00-03:30","check":"network-monitor","services":[{"name":"dashboard","port":8080,"status":"UP","http_code":200,"pid":6061},{"name":"gateway","port":18789,"status":"UP","http_code":200,"pid":118}],"alert_sent":false,"note":"All critical services operational"}]
+{"timestamp": "2026-02-10T02:20:37.005097", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T02:20:37.005283", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T02:20:37.005413", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T02:20:37.010019", "type": "status", "service": "Self-Heal Daemon", "status": "UP", "details": ""}
