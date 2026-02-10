@@ -1,11 +1,11 @@
 {
-  "last_analysis": "2026-02-09T18:01:55.943643",
-  "total_files": 33,
-  "total_lines": 6414,
-  "average_score": 90.9090909090909,
+  "last_analysis": "2026-02-10T00:04:51.302321",
+  "total_files": 38,
+  "total_lines": 9567,
+  "average_score": 91.57894736842105,
   "opportunities": 14,
   "plan": {
-    "generated": "2026-02-09T18:01:55.943565",
+    "generated": "2026-02-10T00:04:51.302229",
     "total_files": 14,
     "high_priority": [],
     "medium_priority": [

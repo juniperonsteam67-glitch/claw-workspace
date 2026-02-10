@@ -1,12 +1,12 @@
 {
-  "last_check": "2026-02-09T23:34:17.276294",
+  "last_check": "2026-02-10T00:04:42.754887",
   "predictions": [
     {
       "issue": "activity_drop",
       "confidence": 75,
-      "details": "Recent: 38, Previous: 83",
-      "recent": 38,
-      "previous": 83
+      "details": "Recent: 39, Previous: 81",
+      "recent": 39,
+      "previous": 81
     }
   ],
   "total_predictions_made": 1
