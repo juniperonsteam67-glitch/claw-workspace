@@ -1,1 +1,1 @@
-{"timestamp":"2026-02-10T07:45:00-03:30","check_type":"network_monitor","services":{"dashboard:8080":"UP (200)","gateway:18789":"UP (200)"},"alert_sent":false}
+{"timestamp": "2026-02-10T07:50:00-03:30", "check_type": "network-monitor", "services": {"dashboard:8080": {"status": "UP", "http_code": 200}, "gateway:18789": {"status": "UP", "http_code": 200}}, "alert_sent": false, "all_healthy": true}
