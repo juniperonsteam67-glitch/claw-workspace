@@ -15,6 +15,12 @@
 - **Purpose:** Creating API keys, signing up for services
 - **Permission:** Authorized to use for account creation
 
+### NVIDIA NIM API
+- **Key:** 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
+- **Endpoint:** https://integrate.api.nvidia.com/v1
+- **Models Available:** moonshotai/kimi-k2.5, deepseek-ai/deepseek-v3.2, meta/llama-3.3-70b-instruct, etc.
+- **Status:** Active ✅
+
 ## What Goes Here
 
 Things like:
