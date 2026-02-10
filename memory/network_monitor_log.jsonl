@@ -2,3 +2,8 @@
 {"timestamp":"2026-02-09T23:06:00","type":"status","service":"OpenClaw Gateway","status":"UP","details":"TCP port 18789 open"}
 {"timestamp":"2026-02-09T23:06:00","type":"status","service":"Self-Heal Daemon","status":"UP","details":"Process running"}
 {"timestamp":"2026-02-09T23:06:00","type":"check_complete","service":"network-monitor","status":"ALL_OK","summary":"3/3 non-optional services up"}
+{"timestamp": "2026-02-09T23:21:27.298186", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-09T23:21:27.298389", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-09T23:21:27.298556", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-09T23:21:27.303084", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-09T23:21:27.303174", "type": "failed", "service": "Self-Heal Daemon", "status": "DOWN", "details": "Changed from UP"}
