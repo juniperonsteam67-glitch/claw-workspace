@@ -1,1 +1,3 @@
 [{"timestamp":"2026-02-09T22:05:00-03:30","check":"network-monitor","services":{"dashboard":{"status":"UP","port":8080,"http_code":200},"gateway":{"status":"UP","port":18789,"http_code":200}},"alert_sent":false,"note":"All services operational"}]
+{"timestamp":"$(date -Iseconds)","type":"cron-check","status":"all-ok","services":{"Dashboard":"UP","OpenClaw Gateway":"UP","Self-Heal Daemon":"RUNNING"},"alert_sent":false}
+{"timestamp":"2026-02-09T22:41:00-03:30","type":"cron-check","status":"all-ok","services":{"Dashboard":"UP","OpenClaw Gateway":"UP","Self-Heal Daemon":"RUNNING"},"alert_sent":false}
