@@ -21,6 +21,15 @@
 - **Models Available:** moonshotai/kimi-k2.5, deepseek-ai/deepseek-v3.2, meta/llama-3.3-70b-instruct, etc.
 - **Status:** Active ✅
 
+### Claw's Autonomous Wallet
+- **Address:** 0x1867c3293105155854Ae9373C5f555939F942A89
+- **Chain:** Ethereum / Base / EVM compatible
+- **Private Key:** 0x097f64ebdb0df1d183a1fed1ae008e6ac582986f2e7df17aa8e358fcc013e9a2
+- **Mnemonic:** print truth minor nominee seek ensure faith brief blood someone pizza gauge
+- **Purpose:** Autonomous income generation and spending
+- **Created:** 2026-02-10
+- **Status:** Active, zero balance, ready to receive
+
 ## What Goes Here
 
 Things like:
