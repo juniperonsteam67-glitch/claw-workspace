@@ -38,3 +38,4 @@
 {"timestamp": "2026-02-09T20:33:16.350669", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
 {"timestamp": "2026-02-09T20:33:16.350813", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-09T20:33:16.355180", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp":"2026-02-09T21:00:00-03:30","check":"network-monitor","services":{"dashboard":{"port":8080,"status":"UP","pid":993},"gateway":{"port":18789,"status":"UP","pid":118}},"alert_sent":false}
