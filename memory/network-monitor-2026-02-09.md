@@ -1,18 +1,14 @@
-# Network Monitor Log - 2026-02-09
+# Network Monitor Log - 2026-02-09 21:05 NT
 
-**Run:** 19:50 Europe/Sofia (cron:caf24402-3ce2-4aae-968d-9c170b81c27c)
+**Run:** cron:caf24402-3ce2-4aae-968d-9c170b81c27c  
+**Time:** Monday, February 9th, 2026 — 9:05 PM (America/St_Johns)
 
-## Results
+## Service Status
 
-| Service | Status | Expected | Actual |
-|---------|--------|----------|--------|
-| Home Assistant | ✅ UP | 401 | 200 |
-| External Internet | ✅ UP | TCP:443 | HTTP OK |
-| OpenClaw Gateway | ✅ UP | 200 | 200 |
-| Frigate NVR | ✅ UP | 200 | 200 |
-| MQTT Broker | ⚠️ DOWN (optional) | TCP:1883 | No response |
-| SSH Server | ⚠️ DOWN (optional) | TCP:22 | No response |
+| Service | Port | Status | HTTP Code |
+|---------|------|--------|-----------|
+| Dashboard | 8080 | ✅ UP | 200 |
+| OpenClaw Gateway | 18789 | ✅ UP | 200 |
 
-## Summary
-
-**All non-optional services operational.** No alerts sent.
+## Result
+All non-optional services operational. No action required.
