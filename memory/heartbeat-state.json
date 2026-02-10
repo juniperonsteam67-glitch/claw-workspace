@@ -1,13 +1,24 @@
 {
   "lastChecks": {
-    "gateway": 1770847800,
-    "dashboard": 1770847800,
+    "gateway": 1770855000,
+    "dashboard": 1770855000,
     "disk": 1739048400,
     "self_heal": 1739048400,
-    "network_monitor": 1770851400
+    "network_monitor": 1770855000
   },
   "lastAlert": null,
   "logs": [
+    {
+      "timestamp": 1770855000,
+      "datetime": "2026-02-10T18:50:00",
+      "service": "network-monitor-cron",
+      "results": {
+        "dashboard:8080": "UP (200)",
+        "gateway:18789": "UP (200)"
+      },
+      "alert_sent": false,
+      "reason": "All services operational"
+    },
     {
       "timestamp": 1770851400,
       "datetime": "2026-02-10T18:40:00",
