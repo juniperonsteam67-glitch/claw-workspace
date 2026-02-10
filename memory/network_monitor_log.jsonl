@@ -7,3 +7,8 @@
 {"timestamp": "2026-02-10T05:10:42.611059", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
 {"timestamp": "2026-02-10T05:10:42.611202", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
 {"timestamp": "2026-02-10T05:10:42.615945", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T07:05:11.146524", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T07:05:11.146729", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T07:05:11.146872", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T07:05:11.150964", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T07:05:28.878409", "type": "alert", "service": "Self-Heal Daemon", "status": "DOWN", "details": "Non-optional service down - Discord alert attempted to user 296414535550763008", "alert_sent": false, "alert_error": "Unknown Channel - may need DM channel open"}
