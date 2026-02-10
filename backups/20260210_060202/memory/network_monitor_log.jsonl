@@ -1,0 +1,9 @@
+{"timestamp":"2026-02-10T03:25:00-03:30","check_type":"network_monitor","services":{"dashboard:8080":{"status":"UP","http_code":200,"pid":6061},"gateway:18789":{"status":"UP","http_code":200,"pid":118}},"alerts_sent":false,"summary":"All services operational"}
+{"timestamp": "2026-02-10T04:30:42.999011", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T04:30:42.999199", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T04:30:42.999347", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T04:30:43.003775", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T05:10:42.610854", "type": "status", "service": "Dashboard", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T05:10:42.611059", "type": "status", "service": "OpenClaw Gateway", "status": "UP", "details": ""}
+{"timestamp": "2026-02-10T05:10:42.611202", "type": "status", "service": "Chromium Debug", "status": "DOWN", "details": ""}
+{"timestamp": "2026-02-10T05:10:42.615945", "type": "status", "service": "Self-Heal Daemon", "status": "DOWN", "details": ""}

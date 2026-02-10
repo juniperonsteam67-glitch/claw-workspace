@@ -1,0 +1,25 @@
+{
+  "type": "markdown",
+  "source": "/usr/lib/node_modules/openclaw/docs/concepts/compaction.md",
+  "title": "Context Window & Compaction",
+  "description": "Compaction **summarizes older conversation** into a compact summary entry and keeps recent messages intact. The summary is stored in the session history, so future requests use:\n\n- The compaction summary\n- Recent messages after the compaction point\n\nCompaction **persists** in the session’s JSONL history.",
+  "sections": {
+    "What compaction is": "Compaction **summarizes older conversation** into a compact summary entry and keeps recent messages intact. The summary is stored in the session history, so future requests use:\n\n- The compaction summary\n- Recent messages after the compaction point\n\nCompaction **persists** in the session’s JSONL history.",
+    "Configuration": "See [Compaction config & modes](/concepts/compaction) for the `agents.defaults.compaction` settings.",
+    "Auto-compaction (default on)": "When a session nears or exceeds the model’s context window, OpenClaw triggers auto-compaction and may retry the original request using the compacted context.\n\nYou’ll see:\n\n- `🧹 Auto-compaction complete` in verbose mode\n- `/status` showing `🧹 Compactions: <count>`\n\nBefore compaction, OpenClaw can run a **silent memory flush** turn to store\ndurable notes to disk. See [Memory](/concepts/memory) for details and config.",
+    "Manual compaction": "Use `/compact` (optionally with instructions) to force a compaction pass:",
+    "Context window source": "Context window is model-specific. OpenClaw uses the model definition from the configured provider catalog to determine limits.",
+    "Compaction vs pruning": "- **Compaction**: summarises and **persists** in JSONL.\n- **Session pruning**: trims old **tool results** only, **in-memory**, per request.\n\nSee [/concepts/session-pruning](/concepts/session-pruning) for pruning details.",
+    "Tips": "- Use `/compact` when sessions feel stale or context is bloated.\n- Large tool outputs are already truncated; pruning can further reduce tool-result buildup.\n- If you need a fresh slate, `/new` or `/reset` starts a new session id."
+  },
+  "commands": [],
+  "code_blocks": [
+    {
+      "language": "",
+      "content": "/compact Focus on decisions and open questions"
+    }
+  ],
+  "learned_from": "/usr/lib/node_modules/openclaw/docs/concepts/compaction.md",
+  "source_type": "file",
+  "name": "openclaw_compaction"
+}
