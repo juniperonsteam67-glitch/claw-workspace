@@ -25,3 +25,4 @@
 {"timestamp":"2026-02-10T04:40:00-03:30","check":"network-monitor","services":{"dashboard:8080":"UP (200)","gateway:18789":"UP (200)"},"alert_sent":false}
 {"timestamp":"2026-02-10T08:30:29NST","services":{"dashboard:8080":"UP(200)","gateway:18789":"UP(200)"},"status":"all_healthy","alert_sent":false}
 {"timestamp":"2026-02-10T08:50:00-03:30","check":"network-monitor","services":{"dashboard:8080":"UP (200)","gateway:18789":"UP (200)"},"status":"healthy"}
+{"timestamp": "2026-02-10T09:20:31-03:30", "check_type": "network-monitor", "services": {"dashboard:8080": "UP (200)", "gateway:18789": "UP (200)"}, "alert_sent": false}
