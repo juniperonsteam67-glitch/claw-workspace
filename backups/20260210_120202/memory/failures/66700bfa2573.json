@@ -1,0 +1,13 @@
+{
+  "id": "66700bfa2573",
+  "timestamp": "2026-02-09T20:47:32.998494",
+  "command": "python3 -c 'import nonexistent_module_xyz'",
+  "error_type": "module_not_found",
+  "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'nonexistent_module_xyz'\n",
+  "root_cause": "Required Python module or package is not installed",
+  "suggested_fix": "Install with pip: pip install <package> | Check if using the correct Python environment | Consider using a virtual environment",
+  "retry_strategy": "Install required dependencies first",
+  "attempt_count": 3,
+  "success_on_retry": false,
+  "related_failures": []
+}

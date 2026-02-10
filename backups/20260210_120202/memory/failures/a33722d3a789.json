@@ -1,0 +1,13 @@
+{
+  "id": "a33722d3a789",
+  "timestamp": "2026-02-09T20:47:25.946557",
+  "command": "cat /nonexistent/file123.txt",
+  "error_type": "file_not_found",
+  "error_message": "cat: /nonexistent/file123.txt: No such file or directory\n",
+  "root_cause": "Attempted to access a file or directory that does not exist",
+  "suggested_fix": "Create the missing file/directory before accessing it | Check the file path for typos",
+  "retry_strategy": "Create missing directories/files before retrying",
+  "attempt_count": 3,
+  "success_on_retry": false,
+  "related_failures": []
+}

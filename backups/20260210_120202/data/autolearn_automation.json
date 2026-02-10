@@ -1,0 +1,18 @@
+{
+  "automation": {
+    "alias": "Claw Daily Autolearn",
+    "description": "Trigger autonomous learning every day at 9 AM NT",
+    "trigger": {
+      "platform": "time",
+      "at": "09:00:00"
+    },
+    "condition": [],
+    "action": {
+      "service": "shell_command.claw_autolearn"
+    },
+    "mode": "single"
+  },
+  "shell_command": {
+    "claw_autolearn": "cd /config/clawd && /usr/local/bin/autolearn >> /config/clawd/logs/autolearn_cron.log 2>&1"
+  }
+}

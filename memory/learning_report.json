@@ -1,22 +1,18 @@
 {
-  "timestamp": "2026-02-10T08:02:32.495850",
+  "timestamp": "2026-02-10T12:03:02.063320",
   "analysis": {
     "peak_activity": {
-      "peak_hour": 20,
-      "activity_count": 101,
-      "total_entries": 1330
+      "peak_hour": 22,
+      "activity_count": 72,
+      "total_entries": 980
     },
     "error_patterns": {
       "total_errors": 0,
       "recurring_issues": []
     },
     "success_patterns": {
-      "total_successes": 446,
+      "total_successes": 8,
       "most_reliable": [
-        [
-          "auto_commit",
-          437
-        ],
         [
           "unknown",
           6
@@ -24,10 +20,6 @@
         [
           "none",
           2
-        ],
-        [
-          "restart_dashboard",
-          1
         ]
       ]
     }
@@ -35,13 +27,13 @@
   "recommendations": [
     {
       "type": "schedule_optimization",
-      "recommendation": "Schedule intensive tasks around hour 20 when I'm most active",
-      "reason": "Peak activity with 101 entries"
+      "recommendation": "Schedule intensive tasks around hour 22 when I'm most active",
+      "reason": "Peak activity with 72 entries"
     },
     {
       "type": "double_down",
-      "recommendation": "Do more of 'auto_commit' - it's my most reliable operation",
-      "reason": "Succeeded 437 times"
+      "recommendation": "Do more of 'unknown' - it's my most reliable operation",
+      "reason": "Succeeded 6 times"
     }
   ]
 }

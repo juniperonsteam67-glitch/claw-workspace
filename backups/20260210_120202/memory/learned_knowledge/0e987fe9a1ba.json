@@ -1,0 +1,47 @@
+{
+  "id": "0e987fe9a1ba",
+  "topic": "Python list comprehensions",
+  "learned_at": "2026-02-09T21:17:46.919180",
+  "knowledge": {
+    "summary": "Python list comprehensions refers to a field/concept involving [ 1 ] This is a design principle for all mutable data structures in Python.... Key concepts include: Though tuples may seem similar to lists, they are often used in different situations and for differe...",
+    "themes": {
+      "definitions": [
+        "[ 1 ] This is a design principle for all mutable data structures in Python.",
+        "Using Lists as Queues \u00b6 It is also possible to use a list as a queue, where the first element added is the first element retrieved (\u201cfirst-in, first-out\u201d); however, lists are not efficient for this purpose.",
+        "The del statement \u00b6 There is a way to remove an item from a list given its index instead of its value: the del statement.",
+        "Since Python is an evolving language, other sequence data types may be added.",
+        "This allows creating customized lists more concisely and improves code readability and efficiency."
+      ],
+      "concepts": [
+        "Though tuples may seem similar to lists, they are often used in different situations and for different purposes."
+      ],
+      "considerations": [
+        "sort ( * , key = None , reverse = False ) Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation)."
+      ]
+    },
+    "sources": [
+      {
+        "title": "Python - List Comprehension",
+        "url": "https://www.w3schools.com/python/python_lists_comprehension.asp"
+      },
+      {
+        "title": "5. Data Structures \u2014 Python 3.14.3 documentation",
+        "url": "https://docs.python.org/3/tutorial/datastructures.html"
+      },
+      {
+        "title": "List Comprehension in Python - GeeksforGeeks",
+        "url": "https://www.geeksforgeeks.org/python/python-list-comprehension/"
+      },
+      {
+        "title": "Can Anyone Quickly Explain the Basics of List ...",
+        "url": "https://www.reddit.com/r/learnpython/comments/1e5eqv5/can_anyone_quickly_explain_the_basics_of_list/"
+      },
+      {
+        "title": "When to Use a List Comprehension in Python \u2013 Real Python",
+        "url": "https://realpython.com/list-comprehension-python/"
+      }
+    ]
+  },
+  "articles_read": 2,
+  "version": "1.0"
+}

@@ -1,0 +1,19 @@
+# OpenClaw Autolearn Cron Configuration
+# Daily learning at 9:00 AM Newfoundland Time
+
+# Cron expression: minute hour day month weekday
+# Runs at 9:00 AM daily
+schedule: "0 9 * * *"
+
+# Command to execute
+command: "cd /config/clawd && /usr/local/bin/autolearn >> /config/clawd/logs/autolearn_cron.log 2>&1"
+
+# Or run as OpenClaw tool invocation:
+tool_command: "python3 /config/clawd/tools/claw_autolearn.py"
+
+# Environment
+timezone: "America/St_Johns"
+working_dir: "/config/clawd"
+
+# Logging
+log_file: "/config/clawd/logs/autolearn_cron.log"

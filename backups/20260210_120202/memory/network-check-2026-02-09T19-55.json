@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-02-09T19:55:00+02:00",
+  "source": "cron:network-monitor-check",
+  "results": {
+    "dashboard:8080": {
+      "status": "UP",
+      "response": "200 OK (Claw Live Activity Dashboard)"
+    },
+    "gateway:18789": {
+      "status": "UP", 
+      "response": "200 OK (RPC probe: ok)"
+    }
+  },
+  "alert_sent": false,
+  "reason": "All non-optional services operational"
+}
