@@ -1,0 +1,13 @@
+{
+  "id": "17f33d00375d",
+  "timestamp": "2026-02-09T20:47:39.245819",
+  "command": "ls /root/protected_dir_123",
+  "error_type": "file_not_found",
+  "error_message": "ls: cannot access '/root/protected_dir_123': No such file or directory\n",
+  "root_cause": "Attempted to access a file or directory that does not exist",
+  "suggested_fix": "Create the missing file/directory before accessing it | Check the file path for typos",
+  "retry_strategy": "Create missing directories/files before retrying",
+  "attempt_count": 3,
+  "success_on_retry": false,
+  "related_failures": []
+}
