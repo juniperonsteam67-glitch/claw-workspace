@@ -7,6 +7,14 @@
 - **Robert's location:** Holyrood, Newfoundland, Canada
 - **Use in scripts:** `TZ=America/St_Johns date`
 
+## Accounts & Credentials
+
+### Google Account
+- **Email:** juniperonsteam67@gmail.com
+- **Password:** newjuniperpassword
+- **Purpose:** Creating API keys, signing up for services
+- **Permission:** Authorized to use for account creation
+
 ## What Goes Here
 
 Things like:
