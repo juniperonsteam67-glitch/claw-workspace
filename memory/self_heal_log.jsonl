@@ -1,1 +1,2 @@
-{"timestamp":"2026-02-10T09:50:35-03:30","check_type":"self_heal_daemon","status":"healthy","details":{"dashboard":{"port":8080,"status_code":200,"state":"UP"},"gateway":{"port":18789,"status_code":200,"state":"UP"},"disk_usage":"36%","memory_usage":"23.7%","critical_processes":{"dashboard":"RUNNING","openclaw":"RUNNING"}},"actions":[],"alerts_sent":false}
+
+[{"timestamp": "2026-02-10T12:00:00", "action": "self_heal_check", "status": "healthy", "details": "Dashboard: UP (200), Gateway: UP (200), Disk: 36%", "alert_sent": false}]
